@@ -103,3 +103,22 @@ Caused by: java.lang.IllegalStateException: Application does not have an active 
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:55)
 	... 74 more
+
+!ENTRY org.eclipse.osgi 4 0 2017-11-04 14:42:33.763
+!MESSAGE Shutdown error
+!STACK 1
+java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireInterruptibly(Unknown Source)
+	at java.util.concurrent.locks.ReentrantLock.lockInterruptibly(Unknown Source)
+	at org.eclipse.osgi.container.SystemModule.waitForStop(SystemModule.java:132)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.waitForStop(EquinoxBundle.java:250)
+	at org.eclipse.osgi.launch.Equinox.waitForStop(Equinox.java:181)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.shutdown(EclipseStarter.java:444)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:262)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
