@@ -1,0 +1,5 @@
+package com.crusaders.gauntlet.java.output;
+
+public interface DisplayMethods {
+
+}

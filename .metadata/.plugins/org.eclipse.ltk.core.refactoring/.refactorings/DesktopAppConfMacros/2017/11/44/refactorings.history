@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.crusaders.gauntlet.java.terminalOutput&apos; to &apos;com.crusaders.gauntlet.java.output&apos;&#x0D;&#x0A;- Original project: &apos;DesktopAppConfMacros&apos;&#x0D;&#x0A;- Original element: &apos;DesktopAppConfMacros/src/com.crusaders.gauntlet.java.terminalOutput&apos;&#x0D;&#x0A;- Renamed element: &apos;DesktopAppConfMacros/src/com.crusaders.gauntlet.java.output&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.crusaders.gauntlet.java.terminalOutput&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.crusaders.gauntlet.java.terminalOutput" name="com.crusaders.gauntlet.java.output" qualified="false" references="true" stamp="1509800117455" textual="false" version="1.0"/>
+</session>
