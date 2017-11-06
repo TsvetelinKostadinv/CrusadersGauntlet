@@ -12,8 +12,12 @@ public class InputOutputTest {
 		DisplayMethods output = new TerminalOutput();
 		InputMethods input = new TerminalInput();
 		
+		System.out.println("Input the message: ");
 		String msg = input.getUserInput();
+		System.out.println("The message is: ");
 		output.displayMessage(msg);
 	}
+	
+	// 06.11.2017 WORKING
 	
 }

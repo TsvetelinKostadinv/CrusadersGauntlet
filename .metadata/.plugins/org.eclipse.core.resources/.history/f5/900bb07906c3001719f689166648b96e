@@ -1,0 +1,5 @@
+package com.crusaders.gauntlet.java.bluetoothIntegration;
+
+public class BTReceiver {
+
+}

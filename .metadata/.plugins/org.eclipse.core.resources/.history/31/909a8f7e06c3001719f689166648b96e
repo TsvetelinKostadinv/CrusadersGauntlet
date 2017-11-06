@@ -1,0 +1,10 @@
+package com.crusaders.gauntlet.java.bluetoothIntegration;
+
+public class BTReceiver implements BluetoothInput{
+
+	@Override
+	public String receiveMessage() {
+		// TODO Here we add the code to receive the message from bluetooth
+	}
+
+}

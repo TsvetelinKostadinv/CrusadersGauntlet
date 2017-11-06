@@ -1,0 +1,5 @@
+package com.crusaders.gauntlet.java.models;
+
+enum Directions {
+
+}

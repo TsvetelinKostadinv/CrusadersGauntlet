@@ -1,0 +1,18 @@
+package com.crusaders.gauntlet.java.test;
+
+import com.crusaders.gauntlet.java.models.DirectionPointer;
+
+public class DirectionPointerTest {
+
+	public static void main(String[] args) {
+		DirectionPointer direction = new DirectionPointer();
+		
+		direction.directionSetUPLEFT();
+		
+		System.out.println(direction.getDirectionPointing());
+		
+	}
+	
+	//06.11.2017 WORKING
+
+}
