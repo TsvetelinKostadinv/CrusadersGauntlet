@@ -5,4 +5,12 @@
 <fullyQualifiedTypeName name="com.crusaders.gauntlet.java.output.DisplayMethods"/>
 <fullyQualifiedTypeName name="com.crusaders.gauntlet.java.output.TerminalOutput"/>
 <fullyQualifiedTypeName name="com.crusaders.gauntlet.java.input.TerminalInput"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.bluetoothIntegration.BluetoothInput"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.models.Direction"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.models.DirectionPointer"/>
+<fullyQualifiedTypeName name="javax.xml.bind.annotation.XmlEnumValue"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.models.Macro"/>
+<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.models.exeptions.UnableToExecuteExeption"/>
 </qualifiedTypeNameHistroy>
