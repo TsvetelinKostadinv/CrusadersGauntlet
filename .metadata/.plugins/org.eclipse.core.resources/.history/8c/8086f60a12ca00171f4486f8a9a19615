@@ -1,0 +1,10 @@
+package com.crusaders.gauntlet.java.test;
+
+public class TestingMenu {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,40 @@
+package com.crusaders.gauntlet.java.test;
+
+import java.util.ArrayList;
+
+import com.crusaders.gauntlet.java.input.InputMethods;
+import com.crusaders.gauntlet.java.input.TerminalInput;
+import com.crusaders.gauntlet.java.output.DisplayMethods;
+import com.crusaders.gauntlet.java.output.TerminalOutput;
+
+public class TestingMenu {
+	
+	private ArrayList<String> displayMessages = new ArrayList<String>();
+	private DisplayMethods display = new TerminalOutput();
+	private InputMethods input = new TerminalInput();
+	
+
+	public static void main(String[] args) {
+		
+		initMenu();
+		
+		displayMenu();
+
+	}
+
+	private static void initMenu() {
+		fillDisplayMessages();
+		
+	}
+
+	private static void displayMenu() {
+		
+		for(int i=0;i<displa)
+		{
+			display.displayMessage(displayMessages.);
+		}
+		
+		
+	}
+
+}

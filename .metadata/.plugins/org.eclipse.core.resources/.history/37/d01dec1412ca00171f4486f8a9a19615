@@ -1,0 +1,12 @@
+package com.crusaders.gauntlet.java.output;
+
+import com.crusaders.gauntlet.java.input.InputMethods;
+
+public class TerminalOutput implements InputMethods {
+
+	@Override
+	public void displayMessage(String msg) {
+		System.out.println(msg);
+	}
+
+}

@@ -1,7 +1,0 @@
-package com.crusaders.gauntlet.java.models;
-
-public class Macro {
-	
-	private ActionOfMacro action = new ActionOfMacro();
-	
-}
