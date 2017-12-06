@@ -1,7 +1,7 @@
 package com.crusaders.gauntlet.java.bluetoothIntegration;
 
 import com.crusaders.gauntlet.java.models.DirectionPointer;
-import com.crusaders.gauntlet.java.models.Macro;
+import com.crusaders.gauntlet.java.models.macroFunctionality.Macro;
 
 public class BTReceiver implements BluetoothInput{
 

@@ -9,12 +9,13 @@ import com.crusaders.gauntlet.java.output.TerminalOutput;
 
 public class TestingMenu {
 	
-	private ArrayList<String> displayMessages = new ArrayList<String>();
-	private DisplayMethods display = new TerminalOutput();
-	private InputMethods input = new TerminalInput();
+	private static ArrayList<String> displayMessages = new ArrayList<String>();
+	private static DisplayMethods display = new TerminalOutput();
+	private static InputMethods input = new TerminalInput();
 	
 
-	public void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		
 		initMenu();
 		
@@ -23,12 +24,14 @@ public class TestingMenu {
 		input.getUserInput(); // unfinished class
 	}
 
-	private void initMenu() {
+	private static void initMenu() 
+	{
 		fillDisplayMessages();
 		
 	}
 
-	private void fillDisplayMessages() {
+	private static void fillDisplayMessages() 
+	{
 		displayMessages.add("[0] Exit");
 		displayMessages.add("[1] Create a new Macro");
 		displayMessages.add("[2] Execute Macro");
@@ -36,7 +39,8 @@ public class TestingMenu {
 		
 	}
 
-	private void displayMenu() {
+	private static void displayMenu() 
+	{
 		
 		for(int i=0;i<displayMessages.size();i++)
 		{
@@ -45,5 +49,7 @@ public class TestingMenu {
 		
 		
 	}
+	
+	//UNFINISHED TEST
 
 }

@@ -1,4 +1,4 @@
-package com.crusaders.gauntlet.java.models;
+package com.crusaders.gauntlet.java.models.macroFunctionality;
 
 import java.io.FileNotFoundException;
 
@@ -31,6 +31,16 @@ public class Macro {
 	{
 		//here we execute the script from the object
 		
+		if(hasBeenInited)
+		{
+			execute();
+		}else{
+			System.out.println("Has to be inited first");
+		}
+		return false; // it will return true if executed correctly and false otherwise
+	}
+
+	private void execute() {
 		try {
 			action.execute();
 		} catch (FileNotFoundException | UnableToExecuteExeption e) {
@@ -44,8 +54,6 @@ public class Macro {
 			}
 		}
 		
-		
-		return false; // it will return true if executed correctly and false otherwise
 	}
 	
 	
