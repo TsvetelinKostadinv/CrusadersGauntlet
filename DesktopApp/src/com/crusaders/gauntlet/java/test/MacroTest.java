@@ -15,6 +15,12 @@ public class MacroTest {
 		macro.executeScript();
 		//secondMacro.executeScript();
 		
+//		Macro macros[] = new Macro[20];
+//		
+//		for (int i = 0; i < macros.length; i++) {
+//			macros[i] = new Macro();
+//			macros[i].initMacro();
+//		}
 	}
 
 }
