@@ -7,5 +7,4 @@ public interface BluetoothInput {
 	public String receiveMessage();
 	public DirectionPointer parseButton();
 	public Macro parseMacro();
-	
 }

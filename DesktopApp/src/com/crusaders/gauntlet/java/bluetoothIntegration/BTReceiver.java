@@ -4,7 +4,6 @@ import com.crusaders.gauntlet.java.models.DirectionPointer;
 import com.crusaders.gauntlet.java.models.macroFunctionality.Macro;
 
 public class BTReceiver implements BluetoothInput{
-
 	
 	@Override
 	public String receiveMessage() {

@@ -2,9 +2,10 @@ package com.crusaders.gauntlet.java.models.codeGeneration;
 
 import java.util.HashMap;
 
-public class CodeGeneratorCPP extends CodeGenerator {
+public class CodeGeneratorCPP implements CodeGenerator {
 
 	private HashMap<String, String> lines = new HashMap<String, String>();
+	public final String extention = ".cpp";
 
 	// full lines of code
 	public final String includeLibIOStream = "includeLibIOStream";
@@ -36,7 +37,7 @@ public class CodeGeneratorCPP extends CodeGenerator {
 		fillLines();
 	}
 
-	private void fillLines() 
+	public void fillLines()
 	{
 		// full lines of code
 		lines.put(includeLibIOStream, "#include<iostream>");

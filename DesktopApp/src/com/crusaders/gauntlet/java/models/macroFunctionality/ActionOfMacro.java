@@ -62,7 +62,6 @@ public class ActionOfMacro {
         this.writer = Writer.getInstance();
         writer.assignFile(actionScript);
         this.gen = new CodeGeneratorCPP();
-        
     }
 
 
