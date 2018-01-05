@@ -93,4 +93,16 @@ public class CodeGeneratorCPP implements CodeGenerator {
 		return defCode.toString();
 	}
 
+	@Override
+	public boolean exists(String line) {
+		for(int i=0;i<lines.size();i++)
+		{
+			if(line.equals(lines.containsValue(line)))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
 }

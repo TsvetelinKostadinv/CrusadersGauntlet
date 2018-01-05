@@ -7,7 +7,6 @@ import com.crusaders.gauntlet.java.fileManagement.FileCreatorDeletor;
 import com.crusaders.gauntlet.java.fileManagement.FileWriter;
 import com.crusaders.gauntlet.java.fileManagement.Writer;
 import com.crusaders.gauntlet.java.models.codeGeneration.CodeGeneratorCPP;
-import com.crusaders.gauntlet.java.models.codeGeneration.Command;
 import com.crusaders.gauntlet.java.models.exeptions.UnableToExecuteExeption;
 
 public class ActionOfMacro {
@@ -89,11 +88,6 @@ public class ActionOfMacro {
 		}
 		return true;
 	}
-	
-	
-	public void insertCommand(Command command)
-	{
-		command.extractCommands();
-	}
+
 	
 }
