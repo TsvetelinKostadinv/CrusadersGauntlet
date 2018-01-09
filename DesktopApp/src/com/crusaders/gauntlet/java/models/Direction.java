@@ -1,51 +1,30 @@
 package com.crusaders.gauntlet.java.models;
 
-public class DirectionPointer {
+public class Direction {
 	
-	private Directions direction;
+	private int accX, accY;
 	
-	public DirectionPointer(){}
-	
-	
-	
-	public void directionSetUP()
+	public Direction(int accX,int accY)
 	{
-		direction = Directions.UP;
-	}
-	public void directionSetDOWN()
-	{
-		direction = Directions.DOWN;
-	}
-	public void directionSetLEFT()
-	{
-		direction = Directions.LEFT;
-	}
-	public void directionSetRIGHT()
-	{
-		direction = Directions.RIGHT;
-	}
-	public void directionSetUPRIGHT()
-	{
-		direction = Directions.UP_RIGHT;
-	}
-	public void directionSetUPLEFT()
-	{
-		direction = Directions.UP_LEFT;
-	}
-	public void directionSetDOWNRIGHT()
-	{
-		direction = Directions.DOWN_RIGHT;
-	}
-	public void directionSetDOWNLEFT()
-	{
-		direction = Directions.DOWN_LEFT;
-	}
-	
-	
-	public String getDirectionPointing()
-	{
-		return direction.toString();
+		this.accX = accX;
+		this.accY = accY;
 	}
 
+	public int getAccX() {
+		return accX;
+	}
 
+	public void setAccX(int accX) {
+		this.accX = accX;
+	}
+
+	public int getAccY() {
+		return accY;
+	}
+
+	public void setAccY(int accY) {
+		this.accY = accY;
+	}
+	
+	
 }

@@ -1,6 +1,6 @@
 package com.crusaders.gauntlet.java.bluetoothIntegration;
 
-import com.crusaders.gauntlet.java.models.DirectionPointer;
+import com.crusaders.gauntlet.java.models.Direction;
 import com.crusaders.gauntlet.java.models.macroFunctionality.Macro;
 
 public class BTReceiver implements BluetoothInput{
@@ -12,7 +12,7 @@ public class BTReceiver implements BluetoothInput{
 	}
 
 	@Override
-	public DirectionPointer parseButton() {
+	public Direction parseButton() {
 		// TODO Auto-generated method stub
 		return null;
 	}
