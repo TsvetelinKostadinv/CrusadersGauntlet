@@ -1,4 +1,6 @@
-package com.crusaders.gauntlet.java.models.codeGeneration;
+package com.crusaders.gauntlet.java.codeGenerationCPP;
+
+import com.crusaders.gauntlet.java.codeGeneration.CodeGenerator;
 
 public class CommandCPP {
 	

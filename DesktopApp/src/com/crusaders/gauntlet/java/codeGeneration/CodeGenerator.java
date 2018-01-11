@@ -1,4 +1,4 @@
-package com.crusaders.gauntlet.java.models.codeGeneration;
+package com.crusaders.gauntlet.java.codeGeneration;
 
 import java.util.HashMap;
 

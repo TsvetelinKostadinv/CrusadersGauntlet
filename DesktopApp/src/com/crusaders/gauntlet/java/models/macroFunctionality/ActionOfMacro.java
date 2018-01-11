@@ -2,11 +2,11 @@ package com.crusaders.gauntlet.java.models.macroFunctionality;
 
 import java.io.*;
 
+import com.crusaders.gauntlet.java.codeGenerationCPP.CodeGeneratorCPP;
 import com.crusaders.gauntlet.java.fileManagement.CreatorDeletor;
 import com.crusaders.gauntlet.java.fileManagement.FileCreatorDeletor;
 import com.crusaders.gauntlet.java.fileManagement.FileWriter;
 import com.crusaders.gauntlet.java.fileManagement.Writer;
-import com.crusaders.gauntlet.java.models.codeGeneration.CodeGeneratorCPP;
 import com.crusaders.gauntlet.java.models.exeptions.UnableToExecuteExeption;
 
 public class ActionOfMacro {

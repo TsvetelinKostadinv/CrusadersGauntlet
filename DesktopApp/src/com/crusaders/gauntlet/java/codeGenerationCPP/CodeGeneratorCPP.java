@@ -1,6 +1,8 @@
-package com.crusaders.gauntlet.java.models.codeGeneration;
+package com.crusaders.gauntlet.java.codeGenerationCPP;
 
 import java.util.HashMap;
+
+import com.crusaders.gauntlet.java.codeGeneration.CodeGenerator;
 
 public class CodeGeneratorCPP implements CodeGenerator {
 
