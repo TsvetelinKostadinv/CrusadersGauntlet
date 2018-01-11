@@ -20,11 +20,12 @@ public class ScriptGeneratorJava implements ScriptGenerator{
 	
 	public ScriptGeneratorJava() {
 		initDependecies();
+		indexOfScript++;
 	}
 	
 	private void initDependecies() {
 		creator = new CreatorDeletor();
-		actionScript = new File(directoryPath + defaultName + extentionOfFile)
+		actionScript = new File(directoryPath + defaultName+ indexOfScript + extentionOfFile);
 	}
 
 	@Override
@@ -39,13 +40,8 @@ public class ScriptGeneratorJava implements ScriptGenerator{
 
 	@Override
 	public boolean generateNewScript() {
-		if(!hasBeenInited)
-		{
-			creator.createFile(actionScript, directoryPath);
-			hasBeenInited = true;
-		}else{
-			System.out.println("Already Inited!!");
-		}
+		creator.createFile(actionScript, directoryPath);
+		return false;
 	}
 
 
