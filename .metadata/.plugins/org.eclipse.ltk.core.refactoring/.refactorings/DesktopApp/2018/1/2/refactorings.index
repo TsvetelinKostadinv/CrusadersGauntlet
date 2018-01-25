@@ -2,3 +2,16 @@
 1515422675912	Delete element
 1515422788891	Delete element
 1515425290384	Delete element
+1515690114755	Move package
+1515690133048	Rename package 'com.crusaders.gauntlet.java.models.codeGeneration'
+1515690160053	Rename package 'com.crusaders.gauntlet.java.models.codeGenerationCPP'
+1515690195166	Move compilation unit
+1515690203323	Move compilation unit
+1515690208936	Move compilation unit
+1515690229077	Delete element
+1515690373956	Move compilation unit
+1515690385301	Move compilation unit
+1515690460102	Rename source folder 'src/com/crusaders/gauntlet/java/CPPManagement'
+1515690536817	Rename package 'com.crusaders.gauntlet.java.CodeGenerationManagement.com.crusaders.gauntlet.java.codeGenerationJava'
+1515690555980	Rename package 'com.crusaders.gauntlet.java.CodeGenerationManagement.com.crusaders.gauntlet.java.codeGeneration'
+1515690568234	Rename package 'com.crusaders.gauntlet.java.CodeGenerationManagement.com.crusaders.gauntlet.java.codeGenerationCPP'

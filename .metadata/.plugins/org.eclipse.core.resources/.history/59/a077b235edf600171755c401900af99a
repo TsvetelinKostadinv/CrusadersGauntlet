@@ -1,0 +1,17 @@
+package com.crusaders.gauntlet.java.keyPress;
+
+public class RobotKeyPresser implements KeyPresser {
+
+	@Override
+	public boolean pressKey(char key) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean pressKey(String keys) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}
