@@ -8,6 +8,8 @@ public class RobotKeyPresser implements KeyPresser {
 	
 	Robot robo;
 	
+	private static boolean isShiftPressed = false; 
+	
 	public RobotKeyPresser()
 	{
 		initDependencies();
@@ -23,8 +25,16 @@ private void initDependencies() {
 
 	@Override
 	public boolean pressKey(int key) {
-		System.out.println(KeyEvent.getExtendedKeyCodeForChar(key));
-		System.out.println(KeyEvent.VK_0);
+		if(key == KeyEvent.VK_SHIFT){
+			if(isShiftPressed)
+			{
+				robo.keyPress(key);
+			}else{
+				robo.keyRelease(key);
+			}
+		}
+		
+		
 		return false;
 		
 	}
