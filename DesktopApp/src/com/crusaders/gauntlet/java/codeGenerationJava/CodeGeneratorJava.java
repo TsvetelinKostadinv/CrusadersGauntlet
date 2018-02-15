@@ -4,6 +4,8 @@ import java.awt.event.KeyEvent;
 
 public class CodeGeneratorJava{
 	
+	public static final String separator = "|";
+	
 	private StringBuilder code;
 	
 	public CodeGeneratorJava() 
@@ -28,12 +30,14 @@ public class CodeGeneratorJava{
 		}
 		int extendedKeyCode=0;
 		for (int i = 0; i < chars.length; i++) {
+			System.out.println(chars[i]);
 			if(Character.isLowerCase(chars[i])){
 				extendedKeyCode = KeyEvent.getExtendedKeyCodeForChar(chars[i]);
-				this.code.append(extendedKeyCode+System.lineSeparator());
+				this.code.append(extendedKeyCode+separator);
 			}else{
 				extendedKeyCode = KeyEvent.getExtendedKeyCodeForChar(chars[i]);
-				this.code.append(KeyEvent.VK_SHIFT+"|"+extendedKeyCode+'|'+KeyEvent.VK_SHIFT+System.lineSeparator());
+				
+				this.code.append(KeyEvent.VK_SHIFT+separator+extendedKeyCode+separator+KeyEvent.VK_SHIFT+separator);
 			}
 		}
 	}
