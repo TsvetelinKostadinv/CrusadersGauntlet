@@ -18,8 +18,6 @@
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
-<fullyQualifiedTypeName name="java.io.File"/>
-<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
 <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
@@ -30,4 +28,11 @@
 <fullyQualifiedTypeName name="java.awt.Point"/>
 <fullyQualifiedTypeName name="org.eclipse.xtext.xbase.lib.Pair"/>
 <fullyQualifiedTypeName name="com.crusaders.gauntlet.java.mouseMovement.RobotMouseInteracter"/>
+<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.codeGeneration.ScriptFinder"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.codeGenerationCPP.CodeGeneratorCPP"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.codeGenerationJava.ScriptGeneratorJava"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.codeGenerationJava.ScriptWriterJava"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.codeGenerationJava.ScriptFinderJava"/>
 </qualifiedTypeNameHistroy>

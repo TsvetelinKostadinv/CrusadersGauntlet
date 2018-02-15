@@ -1,0 +1,5 @@
+package com.crusaders.gauntlet.java.codeGeneration;
+
+public interface ScriptFinder {
+
+}

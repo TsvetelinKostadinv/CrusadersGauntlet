@@ -1,0 +1,22 @@
+package test;
+
+import java.io.File;
+import java.io.IOException;
+
+public class test {
+	File exe = new File("src/test/start.exe");
+	public void execute()
+	{
+		if(exe.canExecute())
+		{
+			Process p;
+			try {
+				p = Runtime.getRuntime().exec(exe.getAbsolutePath());
+				p.waitFor();
+			} catch (IOException | InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+}
