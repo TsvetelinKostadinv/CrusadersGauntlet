@@ -17,7 +17,7 @@ public class PilotClass {
 		
 		ScriptWriterJava writer;
 		writer = new ScriptWriterJava(script);
-		codeGen.insertKeys("Deiv Deiv");
+		codeGen.insertKeys("Aa{}");
 		String toInsert = codeGen.getCode();
 		writer.writeToScript(toInsert);
 		

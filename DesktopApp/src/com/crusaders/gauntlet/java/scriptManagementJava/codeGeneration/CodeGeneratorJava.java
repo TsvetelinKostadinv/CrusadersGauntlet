@@ -1,12 +1,16 @@
 package com.crusaders.gauntlet.java.scriptManagementJava.codeGeneration;
 
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+
+import com.crusaders.gauntlet.java.models.SpecialCharactersHandler;
 
 public class CodeGeneratorJava{
 	
 	public static final String separator = "|";
 	
 	private StringBuilder code;
+	private SpecialCharactersHandler specialHandler = SpecialCharactersHandler.getInstance();
 	
 	public CodeGeneratorJava() 
 	{
@@ -31,16 +35,30 @@ public class CodeGeneratorJava{
 		
 		for (int i = 0; i < chars.length; i++) {
 			System.out.println(chars[i]);
+			System.out.println(specialHandler.isASpecialCharacter(chars[i]));
 			
-			if(Character.isSpaceChar(chars[i])){ insertSpaceCode(); }
-			if(Character.isLetterOrDigit(chars[i])){ insertLetterOrDigit(chars[i]); }
-			
-			
+			if(specialHandler.isASpecialCharacter(chars[i]))
+			{ 
+				ArrayList<Integer> combination = specialHandler.getCombinationFor(chars[i]);
+				//System.out.println(combination.toString());
+				insertArrayList(combination);
+				continue;
+			}
+			if(Character.isSpaceChar(chars[i])){ insertSpaceCode(); continue; }
+			if(Character.isLetterOrDigit(chars[i])){ insertLetterOrDigit(chars[i]);continue; }
 		}
 	}
 	
+	private void insertArrayList(ArrayList<Integer> combination) {
+		for(Integer i : combination)
+		{
+			code.append(i+separator);
+		}
+		
+	}
+
 	private void insertSpaceCode() {
-		this.code.append(KeyEvent.VK_SPACE);
+		this.code.append(KeyEvent.VK_SPACE+separator);
 		
 	}
 
@@ -61,9 +79,4 @@ public class CodeGeneratorJava{
 		this.code = new StringBuilder();
 	}
 	
-	public static void main(String[] args)
-	{
-		System.out.println(KeyEvent.getExtendedKeyCodeForChar('a'));
-		System.out.println(KeyEvent.getExtendedKeyCodeForChar('A'));
-	}
 }
