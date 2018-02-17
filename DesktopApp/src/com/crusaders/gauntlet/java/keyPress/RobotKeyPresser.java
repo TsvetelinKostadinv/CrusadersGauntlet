@@ -15,7 +15,7 @@ public class RobotKeyPresser implements KeyPresser {
 		initDependencies();
 	}
 	
-private void initDependencies() {
+	private void initDependencies() {
 		try {
 			robo = new Robot();
 		} catch (AWTException e) {
@@ -24,25 +24,17 @@ private void initDependencies() {
 	}
 
 	@Override
-	public boolean pressKey(int key) {
+	public void pressKey(int key) {
 		if(key == KeyEvent.VK_SHIFT){
-			if(isShiftPressed)
+			if(!isShiftPressed)
 			{
 				robo.keyPress(key);
 			}else{
 				robo.keyRelease(key);
 			}
+		}else{
+			robo.keyPress(key);robo.keyRelease(key);
 		}
-		
-		
-		return false;
-		
-	}
-
-	@Override
-	public boolean pressKey(String keys) {
-		// TODO Auto-generated method stub
-		return false;
 	}
 	
 	public static void main(String args[])
