@@ -1,10 +1,10 @@
-package com.crusaders.gauntlet.java.scriptManagementJava.scriptFinding;
+package com.crusaders.gauntlet.java.scriptManagementJava.Finding;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 
 import com.crusaders.gauntlet.java.codeGeneration.ScriptFinder;
-import com.crusaders.gauntlet.java.scriptManagementJava.scriptGeneration.ScriptGeneratorJava;
+import com.crusaders.gauntlet.java.scriptManagementJava.Generation.ScriptGeneratorJava;
 
 public class ScriptFinderJava implements ScriptFinder{
 	

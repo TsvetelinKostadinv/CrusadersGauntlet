@@ -1,4 +1,4 @@
-package com.crusaders.gauntlet.java.scriptManagementJava.scriptWriting;
+package com.crusaders.gauntlet.java.scriptManagementJava.Writing;
 
 import java.io.File;
 

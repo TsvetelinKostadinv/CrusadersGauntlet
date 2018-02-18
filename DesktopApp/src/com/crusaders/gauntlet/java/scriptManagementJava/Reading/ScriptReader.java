@@ -1,6 +1,5 @@
-package com.crusaders.gauntlet.java.scriptManagementJava;
+package com.crusaders.gauntlet.java.scriptManagementJava.Reading;
 
-import java.awt.event.KeyEvent;
 import java.io.File;
 
 import com.crusaders.gauntlet.java.fileManagement.FileReader;
@@ -23,14 +22,16 @@ public class ScriptReader {
 	private String[] readInKeys(File script)
 	{
 		String scriptString = reader.readFile(script);
-		String[] keys = scriptString.split(CodeGeneratorJava.separator);
+		String[] keys = scriptString.split("\\|");
 		return keys;
 	}
 	
 	private Integer[] mapToCodes(String[] keys)
 	{
 		Integer[] keycodes = new Integer[keys.length];
-		for(int i = 0; i < keycodes.length; i++) {
+		for(int i = 0; i < keycodes.length-1; i++)
+		{
+			
 			keycodes[i] = Integer.parseInt(keys[i]);
 		}
 		

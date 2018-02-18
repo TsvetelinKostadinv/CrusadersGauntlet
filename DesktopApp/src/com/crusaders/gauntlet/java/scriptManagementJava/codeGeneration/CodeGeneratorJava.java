@@ -34,8 +34,8 @@ public class CodeGeneratorJava{
 		}
 		
 		for (int i = 0; i < chars.length; i++) {
-			System.out.println(chars[i]);
-			System.out.println(specialHandler.isASpecialCharacter(chars[i]));
+			//System.out.println(chars[i]);
+			//System.out.println(specialHandler.isASpecialCharacter(chars[i]));
 			
 			if(specialHandler.isASpecialCharacter(chars[i]))
 			{ 

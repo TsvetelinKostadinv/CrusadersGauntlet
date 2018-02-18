@@ -33,14 +33,17 @@ public class RobotKeyPresser implements KeyPresser {
 				robo.keyRelease(key);
 			}
 		}else{
-			robo.keyPress(key);robo.keyRelease(key);
+			robo.keyPress(key);
+			robo.keyRelease(key);
 		}
+		
 	}
 	
-	public static void main(String args[])
+	//This method is because my robot really likes to hold the shift
+	@Override
+	public void releaseShift()
 	{
-		RobotKeyPresser presser = new RobotKeyPresser();
-		presser.pressKey('0');
+		
+		robo.keyRelease(KeyEvent.VK_SHIFT);
 	}
-	
 }

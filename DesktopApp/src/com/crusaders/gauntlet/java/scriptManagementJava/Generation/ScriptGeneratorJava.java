@@ -1,4 +1,4 @@
-package com.crusaders.gauntlet.java.scriptManagementJava.scriptGeneration;
+package com.crusaders.gauntlet.java.scriptManagementJava.Generation;
 
 import java.io.File;
 import com.crusaders.gauntlet.java.codeGeneration.ScriptGenerator;

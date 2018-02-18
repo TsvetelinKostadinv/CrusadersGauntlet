@@ -12,7 +12,7 @@ public class SpecialCharactersHandler {
 	
 	private SpecialCharactersHandler()
 	{
-		System.out.println("Instance created");
+		//System.out.println("Instance created");
 		initDependecies();
 		fillSpecialsList();
 	}
@@ -164,7 +164,7 @@ public class SpecialCharactersHandler {
 
 	public ArrayList<Integer> getCombinationFor(Character ch)
 	{
-		System.out.println(specials.get(ch));
+		//System.out.println(specials.get(ch));
 		return isASpecialCharacter(ch) ? specials.get(ch) : null;
 	}
 
