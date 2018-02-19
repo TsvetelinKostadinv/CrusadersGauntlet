@@ -22,6 +22,7 @@ public class ScriptFinderJava implements ScriptFinder{
 			String[] namesOfFiles = directory.list();
 			if (namesOfFiles.length != 0) 
 			{
+				
 				for (int i = 0; i < namesOfFiles.length; i++) 
 				{
 					String currName = namesOfFiles[i];

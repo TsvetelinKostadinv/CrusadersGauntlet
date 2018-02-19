@@ -12,7 +12,6 @@ public class SpecialCharactersHandler {
 	
 	private SpecialCharactersHandler()
 	{
-		//System.out.println("Instance created");
 		initDependecies();
 		fillSpecialsList();
 	}
@@ -38,7 +37,6 @@ public class SpecialCharactersHandler {
 		recipes = fillRecipes();
 		for(int i = 0;i<specialsArray.length;i++)
 		{
-			//System.out.println(specialsArray[i]+": "+recipes.get(i));
 			specials.put(specialsArray[i], recipes.get(i));
 		}
 	}
@@ -52,111 +50,112 @@ public class SpecialCharactersHandler {
 		
 		recipe.add(KeyEvent.VK_SHIFT);
 		recipe.add(KeyEvent.getExtendedKeyCodeForChar('`'));
+		recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
 		
 		recipe.add(KeyEvent.VK_SHIFT);
 		recipe.add(KeyEvent.getExtendedKeyCodeForChar('1'));
+		recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
 		recipe.add(KeyEvent.VK_SHIFT);
-		recipe.add(KeyEvent.getExtendedKeyCodeForChar('2'));
+		recipe.add(KeyEvent.getExtendedKeyCodeForChar('2'));recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
 		recipe.add(KeyEvent.VK_SHIFT);
-		recipe.add(KeyEvent.getExtendedKeyCodeForChar('3'));
+		recipe.add(KeyEvent.getExtendedKeyCodeForChar('3'));recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
 		recipe.add(KeyEvent.VK_SHIFT);
-		recipe.add(KeyEvent.getExtendedKeyCodeForChar('4'));
+		recipe.add(KeyEvent.getExtendedKeyCodeForChar('4'));recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
 		recipe.add(KeyEvent.VK_SHIFT);
-		recipe.add(KeyEvent.getExtendedKeyCodeForChar('5'));
+		recipe.add(KeyEvent.getExtendedKeyCodeForChar('5'));recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
 		recipe.add(KeyEvent.VK_SHIFT);
-		recipe.add(KeyEvent.getExtendedKeyCodeForChar('6'));
+		recipe.add(KeyEvent.getExtendedKeyCodeForChar('6'));recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
 		recipe.add(KeyEvent.VK_SHIFT);
-		recipe.add(KeyEvent.getExtendedKeyCodeForChar('7'));
+		recipe.add(KeyEvent.getExtendedKeyCodeForChar('7'));recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
 		recipe.add(KeyEvent.VK_SHIFT);
-		recipe.add(KeyEvent.getExtendedKeyCodeForChar('8'));
+		recipe.add(KeyEvent.getExtendedKeyCodeForChar('8'));recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
 		recipe.add(KeyEvent.VK_SHIFT);
-		recipe.add(KeyEvent.getExtendedKeyCodeForChar('9'));
+		recipe.add(KeyEvent.getExtendedKeyCodeForChar('9'));recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
 		recipe.add(KeyEvent.VK_SHIFT);
-		recipe.add(KeyEvent.getExtendedKeyCodeForChar('0'));
+		recipe.add(KeyEvent.getExtendedKeyCodeForChar('0'));recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
 		recipe.add(KeyEvent.VK_SHIFT);
-		recipe.add(KeyEvent.getExtendedKeyCodeForChar('-'));
+		recipe.add(KeyEvent.getExtendedKeyCodeForChar('-'));recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
 		recipe.add(KeyEvent.VK_SHIFT);
-		recipe.add(KeyEvent.getExtendedKeyCodeForChar('='));
+		recipe.add(KeyEvent.getExtendedKeyCodeForChar('='));recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
 		recipe.add(KeyEvent.VK_SHIFT);
-		recipe.add(KeyEvent.getExtendedKeyCodeForChar('['));
+		recipe.add(KeyEvent.getExtendedKeyCodeForChar('['));recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
 		recipe.add(KeyEvent.VK_SHIFT);
-		recipe.add(KeyEvent.getExtendedKeyCodeForChar(']'));
+		recipe.add(KeyEvent.getExtendedKeyCodeForChar(']'));recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
 		recipe.add(KeyEvent.VK_SHIFT);
-		recipe.add(KeyEvent.getExtendedKeyCodeForChar(';'));
+		recipe.add(KeyEvent.getExtendedKeyCodeForChar(';'));recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
 		recipe.add(KeyEvent.VK_SHIFT);
-		recipe.add(KeyEvent.getExtendedKeyCodeForChar('\''));
+		recipe.add(KeyEvent.getExtendedKeyCodeForChar('\''));recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
 		recipe.add(KeyEvent.VK_SHIFT);
-		recipe.add(KeyEvent.getExtendedKeyCodeForChar('\\'));
+		recipe.add(KeyEvent.getExtendedKeyCodeForChar('\\'));recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
 		recipe.add(KeyEvent.VK_SHIFT);
-		recipe.add(KeyEvent.getExtendedKeyCodeForChar(','));
+		recipe.add(KeyEvent.getExtendedKeyCodeForChar(','));recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
 		recipe.add(KeyEvent.VK_SHIFT);
-		recipe.add(KeyEvent.getExtendedKeyCodeForChar('.'));
+		recipe.add(KeyEvent.getExtendedKeyCodeForChar('.'));recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
 		recipe.add(KeyEvent.VK_SHIFT);
-		recipe.add(KeyEvent.getExtendedKeyCodeForChar('/'));
+		recipe.add(KeyEvent.getExtendedKeyCodeForChar('/'));recipe.add(KeyEvent.VK_SHIFT);
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
-		//System.out.println(readyRecipes);
 		
 		return readyRecipes;
 		

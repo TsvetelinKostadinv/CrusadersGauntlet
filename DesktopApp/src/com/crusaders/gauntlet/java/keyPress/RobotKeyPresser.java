@@ -28,15 +28,17 @@ public class RobotKeyPresser implements KeyPresser {
 		if(key == KeyEvent.VK_SHIFT){
 			if(!isShiftPressed)
 			{
+				isShiftPressed= true;
 				robo.keyPress(key);
+				
 			}else{
-				robo.keyRelease(key);
+				isShiftPressed = false; 
+				releaseShift();
 			}
 		}else{
 			robo.keyPress(key);
 			robo.keyRelease(key);
 		}
-		
 	}
 	
 	//This method is because my robot really likes to hold the shift

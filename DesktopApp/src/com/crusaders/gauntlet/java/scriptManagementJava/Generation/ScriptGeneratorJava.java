@@ -24,9 +24,6 @@ public class ScriptGeneratorJava implements ScriptGenerator{
 	
 	public ScriptGeneratorJava() {
 		initDependecies();
-		currentIndex = indexOfScript;
-		indexOfScript++;
-		
 	}
 	
 	private void initDependecies() {
@@ -36,7 +33,6 @@ public class ScriptGeneratorJava implements ScriptGenerator{
 			directory.mkdirs();
 		}
 		creator = new CreatorDeletor();
-		actionScript = new File(directoryPath + defaultName+ indexOfScript + extentionOfFile);
 	}
 	
 	public int getIndex()
@@ -56,7 +52,10 @@ public class ScriptGeneratorJava implements ScriptGenerator{
 
 	@Override
 	public File generateNewScript() {
+		actionScript = new File(directoryPath + defaultName+ indexOfScript + extentionOfFile);
 		creator.createFile(actionScript, directoryPath);
+		currentIndex = indexOfScript;
+		ScriptGeneratorJava.indexOfScript++;
 		return actionScript;
 	}
 	
