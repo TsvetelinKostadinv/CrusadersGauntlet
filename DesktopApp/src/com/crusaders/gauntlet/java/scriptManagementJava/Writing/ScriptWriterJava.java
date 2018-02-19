@@ -4,6 +4,8 @@ import java.io.File;
 
 import com.crusaders.gauntlet.java.fileManagement.FileWriter;
 import com.crusaders.gauntlet.java.fileManagement.Writer;
+import com.crusaders.gauntlet.java.scriptManagementJava.Generation.ScriptGeneratorJava;
+import com.crusaders.gauntlet.java.scriptManagementJava.codeGeneration.CodeGeneratorJava;
 
 public class ScriptWriterJava {
 	
@@ -24,8 +26,19 @@ public class ScriptWriterJava {
 	
 	public void writeToScript(String whatToWrite)
 	{
-		writer.assignFile(script);
-		writer.writeToFile(whatToWrite);
+		
+		
+		CodeGeneratorJava codeGen = new CodeGeneratorJava();
+        ScriptGeneratorJava scriptGen = new ScriptGeneratorJava();
+        
+        File script = scriptGen.generateNewScript();
+        
+        writer.assignFile(script);
+        
+        codeGen.insertKeys(whatToWrite);
+        String code = codeGen.getCode();
+        writer.writeToFile(code);
+		
 	}
 	
 	public File getScript()

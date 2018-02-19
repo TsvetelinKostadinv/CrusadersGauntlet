@@ -1,6 +1,5 @@
 package com.crusaders.gauntlet.java.scriptManagementJava.Execution;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 
 import com.crusaders.gauntlet.java.keyPress.KeyPresser;
