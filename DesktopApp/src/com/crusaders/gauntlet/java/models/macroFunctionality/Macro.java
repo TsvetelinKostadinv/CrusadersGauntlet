@@ -19,6 +19,28 @@ public class Macro {
 		action.executeScript();
 	}
 	
+	protected void editFunction(String newFunction)
+	{
+		action.editScript(newFunction);
+	}
 	
+	protected void writeToScript(String whatToWrite)
+	{
+		action.writeToScript(whatToWrite);
+	}
 	
+	public void insertLeftClick()
+	{
+		action.insertLeftClick();
+	}
+
+	public void insertRightClick()
+	{
+		action.insertRightClick();
+	}
+	
+	public void insertMiddleClick()
+	{
+		action.insertMiddleClick();
+	}
 }

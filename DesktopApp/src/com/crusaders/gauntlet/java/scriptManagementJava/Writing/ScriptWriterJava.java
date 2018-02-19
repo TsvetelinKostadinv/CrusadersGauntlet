@@ -12,6 +12,9 @@ public class ScriptWriterJava {
 	private FileWriter writer;
 	private File script;
 	
+	CodeGeneratorJava codeGen;
+    ScriptGeneratorJava scriptGen;
+	
 	public ScriptWriterJava(File script)
 	{
 		initDependencies();
@@ -21,16 +24,13 @@ public class ScriptWriterJava {
 	private void initDependencies() 
 	{
 		writer = new Writer();
-		
+		codeGen = new CodeGeneratorJava();
+		scriptGen = new ScriptGeneratorJava();
 	}
 	
 	public void writeToScript(String whatToWrite)
 	{
-		
-		
-		CodeGeneratorJava codeGen = new CodeGeneratorJava();
-        ScriptGeneratorJava scriptGen = new ScriptGeneratorJava();
-        
+	
         File script = scriptGen.generateNewScript();
         
         writer.assignFile(script);
@@ -39,6 +39,21 @@ public class ScriptWriterJava {
         String code = codeGen.getCode();
         writer.writeToFile(code);
 		
+	}
+	
+	public void insertLeftClick()
+	{
+		codeGen.insertLeftClick();;
+	}
+
+	public void insertRightClick()
+	{
+		codeGen.insertRightClick();
+	}
+	
+	public void insertMiddleClick()
+	{
+		codeGen.insertMiddleClick();
 	}
 	
 	public File getScript()

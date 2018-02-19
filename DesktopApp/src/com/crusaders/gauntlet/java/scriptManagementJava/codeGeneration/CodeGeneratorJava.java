@@ -73,7 +73,23 @@ public class CodeGeneratorJava{
 			this.code.append(KeyEvent.VK_SHIFT+separator+extendedKeyCode+separator+KeyEvent.VK_SHIFT+separator);
 		}
 	}
+	
+	public void insertLeftClick()
+	{
+		code.append(KeyEvent.BUTTON1_DOWN_MASK + separator + KeyEvent.BUTTON1_DOWN_MASK);
+	}
 
+	public void insertRightClick()
+	{
+		code.append(KeyEvent.BUTTON2_DOWN_MASK + separator + KeyEvent.BUTTON2_DOWN_MASK);
+	}
+	
+	public void insertMiddleClick()
+	{
+		code.append(KeyEvent.BUTTON3_DOWN_MASK + separator + KeyEvent.BUTTON3_DOWN_MASK);
+	}
+	
+	
 	public void clearCode()
 	{
 		this.code = new StringBuilder();
