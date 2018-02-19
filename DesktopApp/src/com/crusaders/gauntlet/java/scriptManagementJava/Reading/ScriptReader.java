@@ -4,7 +4,6 @@ import java.io.File;
 
 import com.crusaders.gauntlet.java.fileManagement.FileReader;
 import com.crusaders.gauntlet.java.fileManagement.Reader;
-import com.crusaders.gauntlet.java.scriptManagementJava.codeGeneration.CodeGeneratorJava;
 
 public class ScriptReader {
 	Reader reader;
@@ -22,7 +21,7 @@ public class ScriptReader {
 	private String[] readInKeys(File script)
 	{
 		String scriptString = reader.readFile(script);
-		String[] keys = scriptString.split("\\|");
+		String[] keys = scriptString.split("\\|");// i do not know a whole lot about regular expressions so i am going to leave this as it is
 		return keys;
 	}
 	
