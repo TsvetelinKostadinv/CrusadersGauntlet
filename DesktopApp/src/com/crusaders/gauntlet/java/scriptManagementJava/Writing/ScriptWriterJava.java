@@ -30,20 +30,22 @@ public class ScriptWriterJava {
 	
 	public void writeToScript(String whatToWrite)
 	{
-	
-        File script = scriptGen.generateNewScript();
-        
-        writer.assignFile(script);
+		writer.assignFile(script);
         
         codeGen.insertKeys(whatToWrite);
         String code = codeGen.getCode();
         writer.writeToFile(code);
-		
+	}
+	
+	public void writeKeyCodesToScript(String whatToWrite)
+	{
+		writer.assignFile(script);
+		writer.writeToFile(whatToWrite);
 	}
 	
 	public void insertLeftClick()
 	{
-		codeGen.insertLeftClick();;
+		codeGen.insertLeftClick();
 	}
 
 	public void insertRightClick()

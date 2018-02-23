@@ -1,5 +1,7 @@
 package com.crusaders.gauntlet.java.models.macroFunctionality;
 
+import java.awt.event.KeyEvent;
+
 public class Macro {
 	
 	private ActionOfMacro action;
@@ -31,16 +33,16 @@ public class Macro {
 	
 	public void insertLeftClick()
 	{
-		action.insertLeftClick();
+		action.writeKeyCodes(((Integer) KeyEvent.BUTTON1_DOWN_MASK).toString());
 	}
 
 	public void insertRightClick()
 	{
-		action.insertRightClick();
+		action.writeKeyCodes(((Integer) KeyEvent.BUTTON2_DOWN_MASK).toString());
 	}
 	
 	public void insertMiddleClick()
 	{
-		action.insertMiddleClick();
+		action.writeKeyCodes(((Integer) KeyEvent.BUTTON3_DOWN_MASK).toString());
 	}
 }

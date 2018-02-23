@@ -33,13 +33,16 @@ public class ScriptExecutorJava {
 	 */
 	public void executeScriptID(int id, int delayBeforExecutionInMilis) throws FileNotFoundException 
 	{
+		System.out.println("Executiong");
         Integer[] keys = reader.getKeycodesFromScript(finder.findScript(id));
+       
         
         try { Thread.sleep(delayBeforExecutionInMilis); } 
         catch (InterruptedException e) { e.printStackTrace(); }
         
-        for(Integer i = 0;i<keys.length-1;i++)
+        for(Integer i = 0;i<keys.length;i++)
         {
+        	System.out.println("Key: "+keys[i]);
             presser.pressKey(keys[i]);
         }
         

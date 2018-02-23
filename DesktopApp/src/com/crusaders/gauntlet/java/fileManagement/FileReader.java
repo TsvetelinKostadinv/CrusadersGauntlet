@@ -19,7 +19,6 @@ public class FileReader implements Reader{
 			
 			while(line!=null){
 				lines.append(line);
-				lines.append(System.lineSeparator());
 				line = reader.readLine();
 			}
 			reader.close();

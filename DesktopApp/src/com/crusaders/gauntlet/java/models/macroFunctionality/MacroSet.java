@@ -20,22 +20,17 @@ public class MacroSet {
 		indexFingerMacro.insertLeftClick();
 		macros.add(indexFingerMacro);
 		
-		Macro middleFingerMacro = new Macro();
-		indexFingerMacro.insertRightClick();
-		macros.add(middleFingerMacro);
-		
-		Macro ringFingerMacro = new Macro();
-		indexFingerMacro.writeToScript(functionOfRingFinger);
-		macros.add(ringFingerMacro);
-		
-		Macro pinkieFingerMacro = new Macro();
-		indexFingerMacro.writeToScript(functionOfPinkie);
-		macros.add(pinkieFingerMacro);
-		
-		indexFingerMacro = null;
-		middleFingerMacro = null;
-		ringFingerMacro = null;
-		pinkieFingerMacro = null;
+//		Macro middleFingerMacro = new Macro();
+//		indexFingerMacro.insertRightClick();
+//		macros.add(middleFingerMacro);
+//		
+//		Macro ringFingerMacro = new Macro();
+//		indexFingerMacro.writeToScript(functionOfRingFinger);
+//		macros.add(ringFingerMacro);
+//		
+//		Macro pinkieFingerMacro = new Macro();
+//		indexFingerMacro.writeToScript(functionOfPinkie);
+//		macros.add(pinkieFingerMacro);
 	}
 	
 	public void execute(int id)
@@ -56,6 +51,12 @@ public class MacroSet {
 	public void appendMiddleClick(int id)
 	{
 		macros.get(id).insertMiddleClick();
+	}
+	
+	public static void main(String[] args)
+	{
+		MacroSet macros = new MacroSet("aaa", "Pinkie");
+		macros.execute(0);
 	}
 	
 }

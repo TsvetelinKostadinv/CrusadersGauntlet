@@ -29,9 +29,9 @@ public class RobotKeyPresser implements KeyPresser {
 	}
 
 	@Override
-	public void pressKey(int key) {
-		
-		switch (key) {
+	public void pressKey(Integer key) {
+		System.out.println(key==KeyEvent.BUTTON1_DOWN_MASK);
+		switch (key.intValue()) {
 		case KeyEvent.VK_SHIFT:
 			if(!isShiftPressed)
 			{
@@ -44,8 +44,10 @@ public class RobotKeyPresser implements KeyPresser {
 			break;
 			
 		case KeyEvent.BUTTON1_DOWN_MASK:
+			System.out.println("Its left click!!!");
 			if(!isMouseButton1Pressed)
 			{
+				
 				isMouseButton1Pressed= true;
 				robo.mousePress(KeyEvent.BUTTON1_DOWN_MASK);
 			}else{

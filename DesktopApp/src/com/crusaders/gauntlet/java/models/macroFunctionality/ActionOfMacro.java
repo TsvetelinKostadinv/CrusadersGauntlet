@@ -30,9 +30,9 @@ public class ActionOfMacro {
     {
 		scriptGen = new ScriptGeneratorJava();
 		
-		assignedScript = scriptGen.generateNewScript();
-		
 		indexOfScript = scriptGen.getIndex();
+		
+		assignedScript = scriptGen.generateNewScript();
 		
 		writer = new ScriptWriterJava(assignedScript);
 		executor = new ScriptExecutorJava();
@@ -55,6 +55,11 @@ public class ActionOfMacro {
 	public void writeToScript(String whatToWrite)
 	{
 		writer.writeToScript(whatToWrite);
+	}
+	
+	public void writeKeyCodes(String keyCodes)
+	{
+		writer.writeKeyCodesToScript(keyCodes);
 	}
 	
 	public void insertLeftClick()
