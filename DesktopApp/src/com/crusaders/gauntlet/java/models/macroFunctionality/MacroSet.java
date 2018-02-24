@@ -47,20 +47,6 @@ public class MacroSet {
 		macros.add(pinkieFingerMacro);
 		
 	}
-
-	private boolean areThereAllTheScripts()
-	{
-		ScriptFinderJava finder = new ScriptFinderJava();
-		for(int i=0;i<numberOfMacrosInTheSet;i++)
-		{
-			try {
-				finder.findScript(i);
-			} catch (FileNotFoundException e) {
-				return false;
-			}
-		}
-		return true;
-	}
 	
 	public void execute(int id)
 	{
@@ -84,14 +70,6 @@ public class MacroSet {
 	public void appendMiddleClick(int id)
 	{
 		macros.get(id).insertMiddleClick();
-	}
-	
-	public static void main(String[] args)
-	{
-		MacroSet macros = new MacroSet("ringFinger", "Pinkie");
-		
-		macros.execute(3);//ringFingerPinkie
-		
 	}
 		
 	
