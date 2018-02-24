@@ -33,9 +33,9 @@ public class ScriptExecutorJava {
 	 */
 	public void executeScriptID(int id, int delayBeforExecutionInMilis) throws FileNotFoundException 
 	{
-		System.out.println("Executiong");
+		System.out.println("Execution");
         Integer[] keys = reader.getKeycodesFromScript(finder.findScript(id));
-       
+        System.out.println("Script name: "+ finder.findScript(id));
         
         try { Thread.sleep(delayBeforExecutionInMilis); } 
         catch (InterruptedException e) { e.printStackTrace(); }

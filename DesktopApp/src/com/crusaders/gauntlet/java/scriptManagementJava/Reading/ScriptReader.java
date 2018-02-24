@@ -21,18 +21,18 @@ public class ScriptReader {
 	private String[] readInKeys(File script)
 	{
 		String scriptString = reader.readFile(script);
-		System.out.println(scriptString);
+		System.out.println("Whole file: "+scriptString);
 		String[] keys = scriptString.split("\\|");// i do not know a whole lot about regular expressions so i am going to leave this as it is
-		for (int i = 0; i < keys.length; i++) {
-			System.out.println(keys[i]);
-		}
+//		for (int i = 0; i < keys.length; i++) {
+//			System.out.println(keys[i]); // prints the separated keys
+//		}
 		
 		return keys;
 	}
 	
 	private Integer[] mapToCodes(String[] keys)
 	{
-		System.out.println(keys.length);
+		System.out.println("Length: "+keys.length); // prints the length of the array
 		Integer[] keycodes = new Integer[keys.length];
 		
 		for(int i = 0; i < keys.length; i++)

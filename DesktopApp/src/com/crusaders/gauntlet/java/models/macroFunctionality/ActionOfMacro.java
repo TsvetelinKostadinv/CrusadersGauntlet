@@ -62,21 +62,6 @@ public class ActionOfMacro {
 		writer.writeKeyCodesToScript(keyCodes);
 	}
 	
-	public void insertLeftClick()
-	{
-		writer.insertLeftClick();
-	}
-
-	public void insertRightClick()
-	{
-		writer.insertRightClick();
-	}
-	
-	public void insertMiddleClick()
-	{
-		writer.insertMiddleClick();
-	}
-	
 	public void editScript(String whatToUpdate)
 	{
 		writeToScript(whatToUpdate);
