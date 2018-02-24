@@ -22,24 +22,32 @@ public class MacroSet {
 		macros = new ArrayList<Macro>(numberOfMacrosInTheSet);
 		
 		executor = new ScriptExecutorJava();
+
+		assignAllScripts(functionOfRingFinger, functionOfPinkie);
 		
-		Macro indexFingerMacro = new Macro();
-		indexFingerMacro.insertLeftClick();
-		macros.add(0, indexFingerMacro);
-		
-		Macro middleFingerMacro = new Macro();
-		middleFingerMacro.insertRightClick();
-		macros.add(1, middleFingerMacro);
-		
-		Macro ringFingerMacro = new Macro();
-		ringFingerMacro.writeToScript(functionOfRingFinger);
-		macros.add(ringFingerMacro);
-		
-		Macro pinkieFingerMacro = new Macro();
-		pinkieFingerMacro.writeToScript(functionOfPinkie);
-		macros.add(pinkieFingerMacro);
+
 	}
 	
+	private void assignAllScripts(String functionOfRingFinger, String functionOfPinkie) 
+	{
+		Macro indexFingerMacro = new Macro(0);
+		indexFingerMacro.insertLeftClick();
+		macros.add(0, indexFingerMacro);
+			
+		Macro middleFingerMacro = new Macro(1);
+		middleFingerMacro.insertRightClick();
+		macros.add(1, middleFingerMacro);
+			
+		Macro ringFingerMacro = new Macro(2);
+		ringFingerMacro.writeToScript(functionOfRingFinger);
+		macros.add(ringFingerMacro);
+			
+		Macro pinkieFingerMacro = new Macro(3);
+		pinkieFingerMacro.writeToScript(functionOfPinkie);
+		macros.add(pinkieFingerMacro);
+		
+	}
+
 	private boolean areThereAllTheScripts()
 	{
 		ScriptFinderJava finder = new ScriptFinderJava();
@@ -77,5 +85,14 @@ public class MacroSet {
 	{
 		macros.get(id).insertMiddleClick();
 	}
+	
+	public static void main(String[] args)
+	{
+		MacroSet macros = new MacroSet("ringFinger", "Pinkie");
+		
+		macros.execute(3);//ringFingerPinkie
+		
+	}
+		
 	
 }

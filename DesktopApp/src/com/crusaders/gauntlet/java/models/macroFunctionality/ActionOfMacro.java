@@ -4,11 +4,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 import com.crusaders.gauntlet.java.scriptManagementJava.Execution.ScriptExecutorJava;
+import com.crusaders.gauntlet.java.scriptManagementJava.Finding.ScriptFinderJava;
 import com.crusaders.gauntlet.java.scriptManagementJava.Generation.ScriptGeneratorJava;
 import com.crusaders.gauntlet.java.scriptManagementJava.Writing.ScriptWriterJava;
 
 public class ActionOfMacro {
 	
+	private ScriptFinderJava finder;
 	private ScriptGeneratorJava scriptGen;
 	private ScriptWriterJava writer;
 	private ScriptExecutorJava executor;
@@ -21,18 +23,27 @@ public class ActionOfMacro {
 	
 	
 	
-	public ActionOfMacro()
+	public ActionOfMacro(Integer id)
 	{
-		initDependencies();
+		initDependencies(id);
 	}
 
-	private void initDependencies()
+	private void initDependencies(Integer id)
     {
-		scriptGen = new ScriptGeneratorJava();
+		finder = new ScriptFinderJava();
 		
-		indexOfScript = scriptGen.getIndex();
+		try {
+			assignedScript = finder.findScript(id);
+			indexOfScript = id;
+		} catch (FileNotFoundException e) {
+			scriptGen = new ScriptGeneratorJava();
+			
+			indexOfScript = scriptGen.getIndex();
+			
+			assignedScript = scriptGen.generateNewScript();
+		}
 		
-		assignedScript = scriptGen.generateNewScript();
+		
 		
 		writer = new ScriptWriterJava(assignedScript);
 		executor = new ScriptExecutorJava();

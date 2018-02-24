@@ -9,14 +9,14 @@ public class Macro {
 	private ActionOfMacro action;
 	
 	
-	public Macro()
+	public Macro(Integer id)
 	{
-		initDependencies();
+		initDependencies(id);
 	}
 	
-	private void initDependencies() 
+	private void initDependencies(Integer id) 
 	{
-		action = new ActionOfMacro();
+		action = new ActionOfMacro(id);
 	}
 
 	public void execute() {
