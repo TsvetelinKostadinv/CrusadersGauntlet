@@ -1,0 +1,20 @@
+package com.crusaders.gauntlet.java.codeGenerationJava;
+
+import java.io.File;
+
+public class PilotClass {
+	public static void main(String[] args)
+	{
+		CodeGeneratorJava codeGen = new CodeGeneratorJava();
+		ScriptGeneratorJava scriptGen = new ScriptGeneratorJava();
+		
+		File script = scriptGen.generateNewScript();
+		
+		ScriptWriterJava writer = new ScriptWriterJava(script);
+		
+		codeGen.insertKeys("Aa");
+		String toInsert = codeGen.getCode();
+		
+		writer.writeToScript(toInsert);
+	}
+}
