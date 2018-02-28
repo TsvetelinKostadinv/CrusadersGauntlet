@@ -4,7 +4,6 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import com.crusaders.gauntlet.java.scriptManagementJava.Execution.ScriptExecutorJava;
-import com.crusaders.gauntlet.java.scriptManagementJava.Finding.ScriptFinderJava;
 
 public class MacroSet {
 	
@@ -20,12 +19,8 @@ public class MacroSet {
 
 	private void initDependencies(String functionOfRingFinger, String functionOfPinkie) {
 		macros = new ArrayList<Macro>(numberOfMacrosInTheSet);
-		
 		executor = new ScriptExecutorJava();
-
 		assignAllScripts(functionOfRingFinger, functionOfPinkie);
-		
-
 	}
 	
 	private void assignAllScripts(String functionOfRingFinger, String functionOfPinkie) 
