@@ -1,0 +1,11 @@
+package com.crusaders.gauntlet.java.models;
+
+public class DirectionPointer {
+	
+	private int accX, accY;
+	
+	public DirectionPointer(){}
+	
+
+
+}

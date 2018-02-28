@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;DesktopAppConfMacros&apos; to &apos;DesktopApp&apos;&#x0D;&#x0A;- Original element: &apos;DesktopAppConfMacros&apos;&#x0D;&#x0A;- Renamed element: &apos;DesktopAppConfMacros&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;DesktopAppConfMacros&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=DesktopAppConfMacros" name="DesktopApp" references="true" stamp="1510161654277" version="1.0"/>
+</session>
