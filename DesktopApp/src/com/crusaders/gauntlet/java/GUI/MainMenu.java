@@ -11,12 +11,14 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
+import com.crusaders.gauntlet.Session;
+import com.crusaders.gauntlet.java.bluetooth.Receiver;
 import com.crusaders.gauntlet.java.models.macroFunctionality.MacroSet;
 
 public class MainMenu {
 
 	private JFrame frame;
-	private MacroSet macros;
+	private Session session = Session.getInstance();
 
 	/**
 	 * Launch the application.
@@ -25,8 +27,7 @@ public class MainMenu {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MainMenu window = new MainMenu();
-					window.frame.setVisible(true);
+					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -46,18 +47,25 @@ public class MainMenu {
 	 */
 	private void initialize() {
 		
-		macros = new MacroSet("", "");
-		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		
 		JButton btnInitializeConnection = new JButton("Initialize Connection");
 		btnInitializeConnection.setToolTipText("Click this button to initialize the connection");
 		btnInitializeConnection.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				
+				Receiver receiver = new Receiver();
+				Thread thread = new Thread(new Runnable() {
+					
+					@Override
+					public void run() {
+						receiver.startReceiving();
+						
+					}
+				});
+				thread.start();
 				btnInitializeConnection.setEnabled(false);
 			}
 		});
@@ -67,7 +75,7 @@ public class MainMenu {
 			@Override
 			public void mouseClicked(MouseEvent arg0) 
 			{
-				
+				new FingerChoice().run();
 			}
 		});
 		button.setToolTipText("Click this button to initialize the connection");
@@ -91,10 +99,5 @@ public class MainMenu {
 					.addGap(46))
 		);
 		frame.getContentPane().setLayout(groupLayout);
-	}
-	
-	public MacroSet getMacroSet()
-	{
-		return macros;
 	}
 }

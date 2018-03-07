@@ -13,19 +13,21 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class ConfiguringMacrosWindow {
+public class FingerChoice {
 
 	private JFrame frame;
-
+	
+	public final int ringIndex = 2;
+	public final int pinkieIndex = 3;
+	
 	/**
 	 * Launch the application.
 	 */
-	public static void run() {
+	public void run() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ConfiguringMacrosWindow window = new ConfiguringMacrosWindow();
-					window.frame.setVisible(true);
+					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -36,7 +38,7 @@ public class ConfiguringMacrosWindow {
 	/**
 	 * Create the application.
 	 */
-	public ConfiguringMacrosWindow() {
+	public FingerChoice() {
 		initialize();
 	}
 
@@ -46,13 +48,14 @@ public class ConfiguringMacrosWindow {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		
 		JButton btnNewButton = new JButton("Ring finger");
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				
+				frame.setVisible(false);
+				new FingerConfigurationChoice(ringIndex).run();
 			}
 		});
 		btnNewButton.setFont(new Font("Arial Black", Font.BOLD, 20));
@@ -62,7 +65,22 @@ public class ConfiguringMacrosWindow {
 		lblSelectFingerTo.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JButton btnPinkieFinger = new JButton("Pinkie finger");
+		btnPinkieFinger.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				frame.setVisible(false);
+				new FingerConfigurationChoice(pinkieIndex).run();
+			}
+		});
 		btnPinkieFinger.setFont(new Font("Arial Black", Font.BOLD, 20));
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				frame.setVisible(false);
+			}
+		});
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -75,7 +93,10 @@ public class ConfiguringMacrosWindow {
 							.addGap(55)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(btnPinkieFinger, GroupLayout.PREFERRED_SIZE, 321, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 321, GroupLayout.PREFERRED_SIZE))))
+								.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 321, GroupLayout.PREFERRED_SIZE)))
+						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+							.addContainerGap(323, Short.MAX_VALUE)
+							.addComponent(btnBack)))
 					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
@@ -87,7 +108,9 @@ public class ConfiguringMacrosWindow {
 					.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(btnPinkieFinger, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(72, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+					.addComponent(btnBack)
+					.addContainerGap())
 		);
 		frame.getContentPane().setLayout(groupLayout);
 	}

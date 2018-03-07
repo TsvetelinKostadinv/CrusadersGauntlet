@@ -67,5 +67,8 @@ public class MacroSet {
 		macros.get(id).insertMiddleClick();
 	}
 		
-	
+	public void editAction(int id, String newFunction)
+	{
+		macros.get(id).editFunction(newFunction);
+	}
 }

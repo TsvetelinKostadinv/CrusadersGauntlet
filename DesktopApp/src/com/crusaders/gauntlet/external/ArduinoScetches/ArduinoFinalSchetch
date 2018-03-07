@@ -72,14 +72,6 @@ void loop(){
    } else {
       pushed4 = true;
    }
-   
-  Serial.print("AcX = "); Serial.print(AcX);
-  Serial.print(" | AcY = "); Serial.print(AcY);
-  Serial.print(" | AcZ = "); Serial.print(AcZ);
-  Serial.print(" | btn1 = "); Serial.print(pushed1);
-  Serial.print(" | btn2 = "); Serial.print(pushed2);
-  Serial.print(" | btn3 = "); Serial.print(pushed3);  
-  Serial.print(" | btn4 = "); Serial.print(pushed4);Serial.println("#");
 
   BT.print(AcX);
   BT.print("|"); BT.print(AcY);
@@ -87,7 +79,7 @@ void loop(){
   BT.print("|"); BT.print(pushed1);
   BT.print("|"); BT.print(pushed2);
   BT.print("|"); BT.print(pushed3);  
-  BT.print("|"); BT.print(pushed4);Serial.println("#");
+  BT.print("|"); BT.print(pushed4);BT.print("#");
   
   
   delay(20);
