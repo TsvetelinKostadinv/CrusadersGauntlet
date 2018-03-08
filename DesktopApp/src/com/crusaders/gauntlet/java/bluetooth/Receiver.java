@@ -36,10 +36,10 @@ public class Receiver{
 	private String hc05Url; 
 	
 	private MouseInteracter mouse = new RobotMouseInteracter();
-	MacroSet macros = (MacroSet) Session.getInstance().getAttribute("macros");
+	MacroSet macros = new MacroSet("asd", "dfg");//(MacroSet) Session.getInstance().getAttribute("macros");
 
 	boolean scanFinished = false;
-
+	
 	private Discoverer discoverer;
 
 	public Receiver() {
@@ -152,8 +152,8 @@ public class Receiver{
 						values[j] = Integer.parseInt(strValues[j].charAt(0)+"");
 					}
 				}
-				
-				mouse.moveMouse(new Direction((values[accXIndex]*90)/16000, (values[accYIndex]*90)/16000));
+				if(!isFirst) {
+				mouse.moveMouse(new Direction((values[accXIndex]*90)/16000, -(values[accYIndex]*90)/16000));
 				if(values[btn1PushedStateIndex]==0)
 				{
 					macros.execute(0);
@@ -170,7 +170,7 @@ public class Receiver{
 				{
 					macros.execute(3);
 				}
-				
+				}
 				unSepValues = "";
 				isFirst = false;
 			}
@@ -181,6 +181,11 @@ public class Receiver{
 		}
         return null;
 	}
-
+	
+	public static void main(String[] args)
+	{
+		Receiver receiver = new Receiver();
+		receiver.startReceiving();
+	}
 
 }
