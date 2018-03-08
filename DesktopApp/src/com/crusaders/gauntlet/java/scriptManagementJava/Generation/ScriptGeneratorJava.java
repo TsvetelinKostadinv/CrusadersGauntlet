@@ -10,7 +10,7 @@ public class ScriptGeneratorJava implements ScriptGenerator{
 	private static int indexOfScript = 0;
 	
 	
-	public static final String directoryPath = "auto/scripts/Java/";
+	public static final String directoryPath = "C:/CrusadersGauntlet/";
 	public static final String defaultName = "ActionOfMacro";
 	public static final String extentionOfFile = ".txt";
 	
@@ -30,6 +30,7 @@ public class ScriptGeneratorJava implements ScriptGenerator{
 		directory = new File(directoryPath);
 		if(!directory.isDirectory())
 		{
+			System.out.println("Created the dir...");
 			directory.mkdirs();
 		}
 		creator = new CreatorDeletor();

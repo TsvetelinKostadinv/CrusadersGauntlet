@@ -11,14 +11,11 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-import com.crusaders.gauntlet.Session;
 import com.crusaders.gauntlet.java.bluetooth.Receiver;
-import com.crusaders.gauntlet.java.models.macroFunctionality.MacroSet;
 
 public class MainMenu {
 
 	private JFrame frame;
-	private Session session = Session.getInstance();
 
 	/**
 	 * Launch the application.
@@ -49,7 +46,7 @@ public class MainMenu {
 		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JButton btnInitializeConnection = new JButton("Initialize Connection");
 		btnInitializeConnection.setToolTipText("Click this button to initialize the connection");

@@ -14,7 +14,6 @@ import javax.bluetooth.UUID;
 import javax.microedition.io.Connector;
 import javax.microedition.io.StreamConnection;
 
-import com.crusaders.gauntlet.Session;
 import com.crusaders.gauntlet.java.models.Direction;
 import com.crusaders.gauntlet.java.models.macroFunctionality.MacroSet;
 import com.crusaders.gauntlet.java.mouseMovement.MouseInteracter;
@@ -29,6 +28,10 @@ public class Receiver{
 	public final int btn3PushedStateIndex = 5;
 	public final int btn4PushedStateIndex = 6;
 	
+	private final int baseCoolDown = 6;
+	
+	private int coolDownOnBtn3 = 0;
+	private int coolDownOnBtn4 = 0;
 
 	private RemoteDevice hc05;
 	public static final String hc05Address = "98D33570EFF7";
@@ -153,24 +156,29 @@ public class Receiver{
 					}
 				}
 				if(!isFirst) {
-				mouse.moveMouse(new Direction((values[accXIndex]*90)/16000, -(values[accYIndex]*90)/16000));
-				if(values[btn1PushedStateIndex]==0)
-				{
-					macros.execute(0);
+					mouse.moveMouse(new Direction((values[accXIndex]*90)/16000, -(values[accYIndex]*90)/16000));
+					if(values[btn1PushedStateIndex]==0)
+					{
+						macros.execute(0);
+					}
+					if(values[btn2PushedStateIndex]==0)
+					{
+						macros.execute(1);
+					}
+					if(values[btn3PushedStateIndex]==0 && coolDownOnBtn3<=0)
+					{
+						
+						macros.execute(2);
+						coolDownOnBtn3 = baseCoolDown;
+					}
+					if(values[btn4PushedStateIndex]==0 && coolDownOnBtn4<=0)
+					{
+						macros.execute(3);
+						coolDownOnBtn4 = baseCoolDown;
+					}
 				}
-				if(values[btn2PushedStateIndex]==0)
-				{
-					macros.execute(1);
-				}
-				if(values[btn3PushedStateIndex]==0)
-				{
-					macros.execute(2);
-				}
-				if(values[btn4PushedStateIndex]==0)
-				{
-					macros.execute(3);
-				}
-				}
+				coolDownOnBtn3--;
+				coolDownOnBtn4--;
 				unSepValues = "";
 				isFirst = false;
 			}

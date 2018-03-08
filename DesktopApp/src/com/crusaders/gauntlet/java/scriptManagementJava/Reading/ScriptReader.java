@@ -2,11 +2,11 @@ package com.crusaders.gauntlet.java.scriptManagementJava.Reading;
 
 import java.io.File;
 
-import com.crusaders.gauntlet.java.fileManagement.FileReader;
 import com.crusaders.gauntlet.java.fileManagement.Reader;
+import com.crusaders.gauntlet.java.fileManagement.FileReader;
 
 public class ScriptReader {
-	Reader reader;
+	FileReader reader;
 	
 	public ScriptReader()
 	{
@@ -14,7 +14,7 @@ public class ScriptReader {
 	}
 	
 	private void initDependecies() {
-		reader = new FileReader();
+		reader = new Reader();
 		
 	}
 

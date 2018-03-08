@@ -8,7 +8,6 @@ import javax.swing.JTextField;
 import com.crusaders.gauntlet.Session;
 import com.crusaders.gauntlet.java.models.macroFunctionality.MacroSet;
 
-import java.awt.BorderLayout;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
