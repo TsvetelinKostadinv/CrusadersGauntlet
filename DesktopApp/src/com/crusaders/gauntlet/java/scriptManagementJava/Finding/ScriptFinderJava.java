@@ -3,10 +3,9 @@ package com.crusaders.gauntlet.java.scriptManagementJava.Finding;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-import com.crusaders.gauntlet.java.codeGeneration.ScriptFinder;
 import com.crusaders.gauntlet.java.scriptManagementJava.Generation.ScriptGeneratorJava;
 
-public class ScriptFinderJava implements ScriptFinder{
+public class ScriptFinderJava{
 	
 	public final String directoryPath = ScriptGeneratorJava.directoryPath;
 	public final String defaultName = ScriptGeneratorJava.defaultName;
@@ -14,7 +13,6 @@ public class ScriptFinderJava implements ScriptFinder{
 	
 	private final File directory = new File(directoryPath);
 	
-	@Override
 	public File findScript(Integer index) throws FileNotFoundException 
 	{
 		if (directory.isDirectory()) 

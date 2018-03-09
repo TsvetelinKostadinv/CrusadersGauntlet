@@ -1,11 +1,10 @@
 package com.crusaders.gauntlet.java.scriptManagementJava.Generation;
 
 import java.io.File;
-import com.crusaders.gauntlet.java.codeGeneration.ScriptGenerator;
 import com.crusaders.gauntlet.java.fileManagement.CreatorDeletor;
 import com.crusaders.gauntlet.java.fileManagement.FileCreatorDeletor;
 
-public class ScriptGeneratorJava implements ScriptGenerator{
+public class ScriptGeneratorJava{
 	
 	private static int indexOfScript = 0;
 	
@@ -41,17 +40,14 @@ public class ScriptGeneratorJava implements ScriptGenerator{
 		return currentIndex;
 	}
 	
-	@Override
 	public int getNextIndex() {
 		return indexOfScript+1;
 	}
 
-	@Override
 	public String getPath() {
 		return directoryPath;
 	}
 
-	@Override
 	public File generateNewScript() {
 		actionScript = new File(directoryPath + defaultName+ indexOfScript + extentionOfFile);
 		creator.createFile(actionScript, directoryPath);
