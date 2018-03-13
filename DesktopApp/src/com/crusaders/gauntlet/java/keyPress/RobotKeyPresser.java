@@ -30,9 +30,15 @@ public class RobotKeyPresser implements KeyPresser {
 
 	@Override
 	public void pressKey(Integer key) {
-		System.out.println("Is left click: "+(key==KeyEvent.BUTTON1_DOWN_MASK));
-		System.out.println("Is middle click: "+(key==KeyEvent.BUTTON2_DOWN_MASK));
-		System.out.println("Is right click: "+(key==KeyEvent.BUTTON3_DOWN_MASK));
+		//System.out.println("Is left click: "+(key==KeyEvent.BUTTON1_DOWN_MASK));
+		//System.out.println("Is middle click: "+(key==KeyEvent.BUTTON2_DOWN_MASK));
+		//System.out.println("Is right click: "+(key==KeyEvent.BUTTON3_DOWN_MASK));
+		
+		if(key == null)
+		{
+			return;
+		}
+		
 		switch (key.intValue()) {
 		case KeyEvent.VK_SHIFT:
 			if(!isShiftPressed)

@@ -16,7 +16,29 @@ public class MacroSet {
 	{
 		initDependencies(functionOfRingFinger, functionOfPinkie);
 	}
-
+	
+	public MacroSet()
+	{
+		macros = new ArrayList<Macro>(numberOfMacrosInTheSet);
+		executor = new ScriptExecutorJava();
+		
+		Macro indexFingerMacro = new Macro(0);
+		indexFingerMacro.insertLeftClick();
+		macros.add(0, indexFingerMacro);
+			
+		Macro middleFingerMacro = new Macro(1);
+		middleFingerMacro.insertRightClick();
+		macros.add(1, middleFingerMacro);
+			
+		Macro ringFingerMacro = new Macro(2);
+		//ringFingerMacro.writeToScript(functionOfRingFinger);
+		macros.add(ringFingerMacro);
+			
+		Macro pinkieFingerMacro = new Macro(3);
+		//pinkieFingerMacro.writeToScript(functionOfPinkie);
+		macros.add(pinkieFingerMacro);
+	}
+	
 	private void initDependencies(String functionOfRingFinger, String functionOfPinkie) {
 		macros = new ArrayList<Macro>(numberOfMacrosInTheSet);
 		executor = new ScriptExecutorJava();

@@ -28,8 +28,11 @@ public class Receiver{
 	public final int btn3PushedStateIndex = 5;
 	public final int btn4PushedStateIndex = 6;
 	
-	private final int baseCoolDown = 6;
-	
+	private final int baseCoolDownForButtons = 2;
+	private final int baseCoolDownForMacros = 6;
+
+	private int coolDownOnBtn1 = 0;
+	private int coolDownOnBtn2 = 0;
 	private int coolDownOnBtn3 = 0;
 	private int coolDownOnBtn4 = 0;
 
@@ -39,7 +42,7 @@ public class Receiver{
 	private String hc05Url; 
 	
 	private MouseInteracter mouse = new RobotMouseInteracter();
-	MacroSet macros = new MacroSet("asd", "dfg");//(MacroSet) Session.getInstance().getAttribute("macros");
+	MacroSet macros = new MacroSet("", "");//(MacroSet) Session.getInstance().getAttribute("macros");
 
 	boolean scanFinished = false;
 	
@@ -157,26 +160,31 @@ public class Receiver{
 				}
 				if(!isFirst) {
 					mouse.moveMouse(new Direction((values[accXIndex]*90)/16000, -(values[accYIndex]*90)/16000));
-					if(values[btn1PushedStateIndex]==0)
+					if(values[btn1PushedStateIndex]==0 && coolDownOnBtn1<=0)
 					{
 						macros.execute(0);
+						coolDownOnBtn1 = baseCoolDownForButtons;
+						
 					}
-					if(values[btn2PushedStateIndex]==0)
+					if(values[btn2PushedStateIndex]==0 && coolDownOnBtn2<=0)
 					{
 						macros.execute(1);
+						coolDownOnBtn2 = baseCoolDownForButtons;
 					}
 					if(values[btn3PushedStateIndex]==0 && coolDownOnBtn3<=0)
 					{
 						
 						macros.execute(2);
-						coolDownOnBtn3 = baseCoolDown;
+						coolDownOnBtn3 = baseCoolDownForMacros;
 					}
 					if(values[btn4PushedStateIndex]==0 && coolDownOnBtn4<=0)
 					{
 						macros.execute(3);
-						coolDownOnBtn4 = baseCoolDown;
+						coolDownOnBtn4 = baseCoolDownForMacros;
 					}
 				}
+				coolDownOnBtn1--;
+				coolDownOnBtn2--;
 				coolDownOnBtn3--;
 				coolDownOnBtn4--;
 				unSepValues = "";

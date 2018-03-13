@@ -31,7 +31,7 @@ public final class StarterClass
 	
 	
 	private static void initSession() {
-		session.addAttribute("macros", new MacroSet("", ""));
+		session.addAttribute("macros", new MacroSet());
 		
 	}
 	

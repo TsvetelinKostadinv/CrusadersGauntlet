@@ -37,8 +37,14 @@ public class ScriptReader {
 		
 		for(int i = 0; i < keys.length; i++)
 		{
+			try {
 			System.out.println("Integer: "+ Integer.valueOf(keys[i]));
 			keycodes[i] = Integer.parseInt(keys[i]);
+			}catch(NumberFormatException e)
+			{
+				keycodes = new Integer[0];
+				break;
+			}
 		}
 		
 		return keycodes;
