@@ -10,7 +10,7 @@ public class CodeGeneratorJava{
 	public static final String separator = "|";
 	
 	private StringBuilder code;
-	private SpecialCharactersHandler specialHandler = SpecialCharactersHandler.getInstance();
+	private SpecialCharactersHandler specialHandler;
 	
 	public CodeGeneratorJava() 
 	{
@@ -19,6 +19,7 @@ public class CodeGeneratorJava{
 	
 	private void initDependecies() {
 		code = new StringBuilder();
+		specialHandler = SpecialCharactersHandler.getInstance();
 	}
 	
 	public String getCode()
@@ -42,11 +43,13 @@ public class CodeGeneratorJava{
 				ArrayList<Integer> combination = specialHandler.getCombinationFor(chars[i]);
 				//System.out.println(combination.toString());
 				insertArrayList(combination);
+				combination = null;
 				continue;
 			}
 			if(Character.isSpaceChar(chars[i])){ insertSpaceCode(); continue; }
 			if(Character.isLetterOrDigit(chars[i])){ insertLetterOrDigit(chars[i]);continue; }
 		}
+		chars = null;
 	}
 	
 	private void insertArrayList(ArrayList<Integer> combination) {
@@ -76,17 +79,17 @@ public class CodeGeneratorJava{
 	
 	public void insertLeftClick()
 	{
-		code.append(KeyEvent.BUTTON1_DOWN_MASK + separator + KeyEvent.BUTTON1_DOWN_MASK);
+		code.append(KeyEvent.BUTTON1_DOWN_MASK + separator);
 	}
 
 	public void insertRightClick()
 	{
-		code.append(KeyEvent.BUTTON2_DOWN_MASK + separator + KeyEvent.BUTTON2_DOWN_MASK);
+		code.append(KeyEvent.BUTTON2_DOWN_MASK + separator);
 	}
 	
 	public void insertMiddleClick()
 	{
-		code.append(KeyEvent.BUTTON3_DOWN_MASK + separator + KeyEvent.BUTTON3_DOWN_MASK);
+		code.append(KeyEvent.BUTTON3_DOWN_MASK + separator);
 	}
 	
 	

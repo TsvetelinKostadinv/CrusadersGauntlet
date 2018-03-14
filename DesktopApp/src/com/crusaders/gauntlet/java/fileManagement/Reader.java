@@ -22,6 +22,7 @@ public class Reader implements FileReader{
 				line = reader.readLine();
 			}
 			reader.close();
+			reader = null;
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

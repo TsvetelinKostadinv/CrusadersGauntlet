@@ -7,8 +7,6 @@ import java.awt.event.KeyEvent;
 public class RobotKeyPresser implements KeyPresser {
 	
 	Robot robo;
-
-	
 	
 	private static boolean isShiftPressed = false; 
 	private static boolean isMouseButton1Pressed = false; 
@@ -94,4 +92,7 @@ public class RobotKeyPresser implements KeyPresser {
 	//This method is because my robot really likes to hold the shift
 	@Override
 	public void releaseShift(){	robo.keyRelease(KeyEvent.VK_SHIFT); }
+	
+	public void pressMouse(Integer button) { robo.mousePress(button); }
+	public void releaseMouse(Integer button) { robo.mouseRelease(button); }
 }

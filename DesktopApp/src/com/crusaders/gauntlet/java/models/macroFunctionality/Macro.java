@@ -35,16 +35,16 @@ public class Macro {
 	
 	public void insertLeftClick()
 	{
-		action.writeKeyCodes(((Integer) KeyEvent.BUTTON1_DOWN_MASK).toString()+CodeGeneratorJava.separator+((Integer) KeyEvent.BUTTON1_DOWN_MASK).toString());
+		action.writeKeyCodes(((Integer) KeyEvent.BUTTON1_DOWN_MASK).toString()+CodeGeneratorJava.separator);
 	}
 	
 	public void insertRightClick()
 	{
-		action.writeKeyCodes(((Integer) KeyEvent.BUTTON3_DOWN_MASK).toString()+CodeGeneratorJava.separator+((Integer) KeyEvent.BUTTON3_DOWN_MASK).toString());
+		action.writeKeyCodes(((Integer) KeyEvent.BUTTON3_DOWN_MASK).toString()+CodeGeneratorJava.separator);
 	}
 	
 	public void insertMiddleClick()
 	{
-		action.writeKeyCodes(((Integer) KeyEvent.BUTTON2_DOWN_MASK).toString()+CodeGeneratorJava.separator+((Integer) KeyEvent.BUTTON2_DOWN_MASK).toString());
+		action.writeKeyCodes(((Integer) KeyEvent.BUTTON2_DOWN_MASK).toString()+CodeGeneratorJava.separator);
 	}
 }

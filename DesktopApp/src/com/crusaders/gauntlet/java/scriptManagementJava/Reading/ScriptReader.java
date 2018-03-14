@@ -27,6 +27,8 @@ public class ScriptReader {
 //			System.out.println(keys[i]); // prints the separated keys
 //		}
 		
+		scriptString = null;
+		
 		return keys;
 	}
 	
@@ -42,8 +44,7 @@ public class ScriptReader {
 			keycodes[i] = Integer.parseInt(keys[i]);
 			}catch(NumberFormatException e)
 			{
-				keycodes = new Integer[0];
-				break;
+				return new Integer[0];
 			}
 		}
 		
@@ -64,6 +65,7 @@ public class ScriptReader {
 	{
 		String[] unmappedKeys = readInKeys(script);
 		Integer[] keycodes = mapToCodes(unmappedKeys);
+		unmappedKeys = null;
 		return keycodes;
 	}
 	

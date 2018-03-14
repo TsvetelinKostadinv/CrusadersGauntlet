@@ -12,10 +12,14 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 import com.crusaders.gauntlet.java.bluetooth.Receiver;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MainMenu {
 
 	private JFrame frame;
+	
+
 
 	/**
 	 * Launch the application.
@@ -53,16 +57,17 @@ public class MainMenu {
 		btnInitializeConnection.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				Receiver receiver = new Receiver();
-				Thread thread = new Thread(new Runnable() {
+				Thread receivingThread;
+				
+				Runnable process = new Runnable() {
 					
 					@Override
 					public void run() {
-						receiver.startReceiving();
-						
+						new Receiver().startReceiving();
 					}
-				});
-				thread.start();
+				};
+				receivingThread = new Thread(process);
+				receivingThread.start();
 				btnInitializeConnection.setEnabled(false);
 			}
 		});
@@ -76,21 +81,34 @@ public class MainMenu {
 			}
 		});
 		button.setToolTipText("Click this button to initialize the connection");
+		
+		JButton btnNewButton = new JButton("Stop connection");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				//receivingThread.
+			}
+		});
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(btnInitializeConnection)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(btnInitializeConnection)
+							.addGap(18)
+							.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 155, GroupLayout.PREFERRED_SIZE))
 						.addComponent(button, GroupLayout.PREFERRED_SIZE, 147, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(273, Short.MAX_VALUE))
+					.addContainerGap(100, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
 					.addGap(36)
-					.addComponent(btnInitializeConnection, GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(btnNewButton, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+						.addComponent(btnInitializeConnection, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(button, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE)
 					.addGap(46))

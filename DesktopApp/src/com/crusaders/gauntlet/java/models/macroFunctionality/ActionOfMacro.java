@@ -35,16 +35,15 @@ public class ActionOfMacro {
 		try {
 			assignedScript = finder.findScript(id);
 			indexOfScript = id;
+			finder = null;
 		} catch (FileNotFoundException e) {
 			scriptGen = new ScriptGeneratorJava();
 			
 			indexOfScript = scriptGen.getIndex();
 			
 			assignedScript = scriptGen.generateNewScript();
-		}
-		
-		
-		
+			scriptGen = null;
+			}
 		writer = new ScriptWriterJava(assignedScript);
 		executor = new ScriptExecutorJava();
 		

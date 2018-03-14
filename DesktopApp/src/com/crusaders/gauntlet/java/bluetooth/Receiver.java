@@ -28,13 +28,13 @@ public class Receiver{
 	public final int btn3PushedStateIndex = 5;
 	public final int btn4PushedStateIndex = 6;
 	
-	private final int baseCoolDownForButtons = 2;
 	private final int baseCoolDownForMacros = 6;
 
-	private int coolDownOnBtn1 = 0;
 	private int coolDownOnBtn2 = 0;
 	private int coolDownOnBtn3 = 0;
 	private int coolDownOnBtn4 = 0;
+	
+	private int prevStateBtn1 = 1;
 
 	private RemoteDevice hc05;
 	public static final String hc05Address = "98D33570EFF7";
@@ -143,7 +143,6 @@ public class Receiver{
 				System.out.println("Unseparated value: " + unSepValues);
 				
 				
-				
 				String[] strValues = unSepValues.split("\\|");
 				
 				int[] values = new int[strValues.length];
@@ -160,16 +159,25 @@ public class Receiver{
 				}
 				if(!isFirst) {
 					mouse.moveMouse(new Direction((values[accXIndex]*90)/16000, -(values[accYIndex]*90)/16000));
-					if(values[btn1PushedStateIndex]==0 && coolDownOnBtn1<=0)
+					if(values[btn1PushedStateIndex]==0)
 					{
-						macros.execute(0);
-						coolDownOnBtn1 = baseCoolDownForButtons;
-						
+						if(values[btn1PushedStateIndex]!=prevStateBtn1)
+						{
+							macros.execute(0);
+							prevStateBtn1 = values[btn1PushedStateIndex];
+						}
+					}else {
+						if(values[btn1PushedStateIndex]!=prevStateBtn1)
+						{
+							macros.execute(0);
+							prevStateBtn1 = values[btn1PushedStateIndex];
+						}
 					}
 					if(values[btn2PushedStateIndex]==0 && coolDownOnBtn2<=0)
 					{
 						macros.execute(1);
-						coolDownOnBtn2 = baseCoolDownForButtons;
+						coolDownOnBtn2 = baseCoolDownForMacros;
+
 					}
 					if(values[btn3PushedStateIndex]==0 && coolDownOnBtn3<=0)
 					{
@@ -183,7 +191,6 @@ public class Receiver{
 						coolDownOnBtn4 = baseCoolDownForMacros;
 					}
 				}
-				coolDownOnBtn1--;
 				coolDownOnBtn2--;
 				coolDownOnBtn3--;
 				coolDownOnBtn4--;

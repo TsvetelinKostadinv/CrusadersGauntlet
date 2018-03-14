@@ -32,11 +32,14 @@ public class MacroSet {
 			
 		Macro ringFingerMacro = new Macro(2);
 		//ringFingerMacro.writeToScript(functionOfRingFinger);
-		macros.add(ringFingerMacro);
+		macros.add(2, ringFingerMacro);
 			
 		Macro pinkieFingerMacro = new Macro(3);
 		//pinkieFingerMacro.writeToScript(functionOfPinkie);
-		macros.add(pinkieFingerMacro);
+		macros.add(3, pinkieFingerMacro);
+		
+		
+		
 	}
 	
 	private void initDependencies(String functionOfRingFinger, String functionOfPinkie) {

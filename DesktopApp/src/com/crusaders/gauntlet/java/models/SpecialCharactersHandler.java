@@ -39,6 +39,7 @@ public class SpecialCharactersHandler {
 		{
 			specials.put(specialsArray[i], recipes.get(i));
 		}
+		specialsArray = null;
 	}
 	
 	//This is the method i am most disappointed to write because i am sure there is a better way
@@ -156,6 +157,7 @@ public class SpecialCharactersHandler {
 		readyRecipes.add(new ArrayList<Integer>(recipe));
 		recipe.clear();
 		
+		recipe = null;
 		
 		return readyRecipes;
 		

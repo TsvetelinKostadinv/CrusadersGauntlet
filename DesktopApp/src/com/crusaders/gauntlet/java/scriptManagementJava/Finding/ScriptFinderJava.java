@@ -38,8 +38,11 @@ public class ScriptFinderJava{
 							return new File(directoryPath + defaultName + index.toString() + extentionOfFile);
 						}
 					}
+					currName = null;
+					buildingDefaultName = null;
 				}
 			}
+			namesOfFiles = null;
 		} else {
 			directory.mkdirs();
 		}

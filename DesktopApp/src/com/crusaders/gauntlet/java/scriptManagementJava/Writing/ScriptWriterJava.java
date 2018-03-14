@@ -35,6 +35,7 @@ public class ScriptWriterJava {
         codeGen.insertKeys(whatToWrite);
         String code = codeGen.getCode();
         writer.writeToFile(code);
+        code = null;
 	}
 	
 	public void writeKeyCodesToScript(String whatToWrite)

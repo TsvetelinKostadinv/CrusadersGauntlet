@@ -23,6 +23,7 @@ public class Writer implements FileWriter {
             BufferedWriter writer = new BufferedWriter(new PrintWriter(targetFile));
             writer.write(str);
             writer.close();
+            writer = null;
         }catch (FileNotFoundException e )
         {
             e.printStackTrace();

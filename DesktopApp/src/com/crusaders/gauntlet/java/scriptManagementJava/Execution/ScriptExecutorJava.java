@@ -45,7 +45,7 @@ public class ScriptExecutorJava {
         	System.out.println("Key: "+keys[i]);
             presser.pressKey(keys[i]);
         }
-        
+        keys = null;
         presser.releaseShift();
 	}
 	

@@ -31,7 +31,7 @@ public class RobotMouseInteracter implements MouseInteracter{
 	
 	
 	
-	public final int maxSpeed = 20;
+	public final int maxSpeed = 30;
 	public final int maxInputSpeed = 100;
 	public final int stepsForMaxSpeed = 20;
 	public final int increment = maxSpeed/stepsForMaxSpeed;
@@ -77,11 +77,6 @@ public class RobotMouseInteracter implements MouseInteracter{
 		this.mouseY = (int) loc.getY();
 		loc=null;
 	}
-	
-	public static void main(String[] args)
-	{
-		RobotMouseInteracter i = new RobotMouseInteracter();
-		i.moveMouse(new Direction(90, 30));
-	}
+
 
 }
