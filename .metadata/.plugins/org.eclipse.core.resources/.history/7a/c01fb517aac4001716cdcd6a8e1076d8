@@ -1,5 +1,0 @@
-package com.crusaders.gauntlet.java.models.exeptions;
-
-public class UnableToExecuteExeprion extends Exception {
-
-}
