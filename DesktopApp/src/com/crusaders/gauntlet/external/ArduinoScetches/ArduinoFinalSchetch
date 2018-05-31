@@ -1,0 +1,86 @@
+// March 07, 2018
+// Author Tsvetelin Kostadinov
+
+#include<Wire.h>
+#include <SoftwareSerial.h>
+ 
+SoftwareSerial BT(10, 11);
+
+int buttonPin1 = 4;
+int buttonPin2 = 5;
+int buttonPin3 = 6;
+int buttonPin4 = 7;
+
+bool pushed1 = false;
+bool pushed2 = false;
+bool pushed3 = false;
+bool pushed4 = false;
+
+const int MPU_addr=0x68;
+int16_t AcX,AcY,AcZ,Tmp,GyX,GyY,GyZ;
+
+
+void setup(){
+  
+   pinMode(buttonPin1, INPUT_PULLUP);
+   pinMode(buttonPin2, INPUT_PULLUP);
+   pinMode(buttonPin3, INPUT_PULLUP);
+   pinMode(buttonPin4, INPUT_PULLUP);
+   
+   Wire.begin();
+   BT.begin(9600);
+   Wire.beginTransmission(MPU_addr);
+   Wire.write(0x6B);
+   Wire.write(0);
+   Wire.endTransmission(true);
+   Serial.begin(9600);
+}
+void loop(){
+  Wire.beginTransmission(MPU_addr);
+  Wire.write(0x3B);
+  Wire.endTransmission(false);
+  Wire.requestFrom(MPU_addr,14,true);  // request a total of 14 registers
+  AcX=Wire.read()<<8|Wire.read();  // 0x3B (ACCEL_XOUT_H) & 0x3C (ACCEL_XOUT_L)    
+  AcY=Wire.read()<<8|Wire.read();  // 0x3D (ACCEL_YOUT_H) & 0x3E (ACCEL_YOUT_L)
+  AcZ=Wire.read()<<8|Wire.read();  // 0x3F (ACCEL_ZOUT_H) & 0x40 (ACCEL_ZOUT_L)
+  Tmp=Wire.read()<<8|Wire.read();  // 0x41 (TEMP_OUT_H) & 0x42 (TEMP_OUT_L)
+  GyX=Wire.read()<<8|Wire.read();  // 0x43 (GYRO_XOUT_H) & 0x44 (GYRO_XOUT_L)
+  GyY=Wire.read()<<8|Wire.read();  // 0x45 (GYRO_YOUT_H) & 0x46 (GYRO_YOUT_L)
+  GyZ=Wire.read()<<8|Wire.read();  // 0x47 (GYRO_ZOUT_H) & 0x48 (GYRO_ZOUT_L)
+  
+   int buttonValue = digitalRead(buttonPin1);
+   if (buttonValue == LOW){
+      pushed1 = false;
+   } else {
+      pushed1 = true;
+   }   
+   buttonValue = digitalRead(buttonPin2);
+   if (buttonValue == LOW){
+      pushed2 = false;
+   } else {
+      pushed2 = true;
+   }
+   buttonValue = digitalRead(buttonPin3);
+   if (buttonValue == LOW){
+      pushed3 = false;
+   } else {
+      pushed3 = true;
+   }
+   buttonValue = digitalRead(buttonPin4);
+   if (buttonValue == LOW){
+      pushed4 = false;
+   } else {
+      pushed4 = true;
+   }
+
+  BT.print(AcX);
+  BT.print("|"); BT.print(AcY);
+  BT.print("|"); BT.print(AcZ);
+  BT.print("|"); BT.print(pushed1);
+  BT.print("|"); BT.print(pushed2);
+  BT.print("|"); BT.print(pushed3);  
+  BT.print("|"); BT.print(pushed4);BT.print("#");
+  
+  
+  delay(20);
+}

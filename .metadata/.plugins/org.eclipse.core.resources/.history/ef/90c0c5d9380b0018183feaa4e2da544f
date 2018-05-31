@@ -1,0 +1,10 @@
+package com.crusaders.gauntlet.java.codeGenerationJava;
+
+import com.crusaders.gauntlet.java.codeGenerationCPP.CodeGeneratorCPP;
+
+public class PilotClass {
+	public static void main(String[] args)
+	{
+		CodeGeneratorJava gen = new CodeGeneratorJava();
+	}
+}

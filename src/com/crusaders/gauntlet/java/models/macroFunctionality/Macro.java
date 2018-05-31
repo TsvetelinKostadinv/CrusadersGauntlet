@@ -1,61 +1,50 @@
 package com.crusaders.gauntlet.java.models.macroFunctionality;
 
-import java.io.FileNotFoundException;
+import java.awt.event.KeyEvent;
 
-import com.crusaders.gauntlet.java.models.exeptions.UnableToExecuteExeption;
+import com.crusaders.gauntlet.java.scriptManagementJava.codeGeneration.CodeGeneratorJava;
 
 public class Macro {
 	
-	private ActionOfMacro action = new ActionOfMacro();
-	
-	private boolean hasBeenInited = false;
+	private ActionOfMacro action;
 	
 	
-	public Macro()
+	public Macro(Integer id)
 	{
-		System.out.println("Crated the macro object");
+		initDependencies(id);
 	}
 	
-	public void initMacro()
+	private void initDependencies(Integer id) 
 	{
-		hasBeenInited = true;
-		action.initMacroScript();
-	}
-	
-	public boolean hasBeenInited()
-	{
-		return hasBeenInited;
-	}
-	
-	public boolean executeScript()
-	{
-		//here we execute the script from the object
-		
-		if(hasBeenInited)
-		{
-			execute();
-		}else{
-			System.out.println("Has to be inited first");
-		}
-		return false; // it will return true if executed correctly and false otherwise
+		action = new ActionOfMacro(id);
 	}
 
-	private void execute() {
-		try {
-			action.execute();
-		} catch (FileNotFoundException | UnableToExecuteExeption e) {
-			e.printStackTrace();
-			if(e instanceof FileNotFoundException)
-			{
-				System.out.println("The script was not found");
-			}else if(e instanceof UnableToExecuteExeption)
-			{
-				System.out.println("Unable to execute the script");
-			}
-		}
-		
+	public void execute() {
+		action.executeScript();
 	}
 	
+	protected void editFunction(String newFunction)
+	{
+		action.editScript(newFunction);
+	}
 	
+	protected void writeToScript(String whatToWrite)
+	{
+		action.writeToScript(whatToWrite);
+	}
 	
+	public void insertLeftClick()
+	{
+		action.writeKeyCodes(((Integer) KeyEvent.BUTTON1_DOWN_MASK).toString()+CodeGeneratorJava.separator);
+	}
+	
+	public void insertRightClick()
+	{
+		action.writeKeyCodes(((Integer) KeyEvent.BUTTON3_DOWN_MASK).toString()+CodeGeneratorJava.separator);
+	}
+	
+	public void insertMiddleClick()
+	{
+		action.writeKeyCodes(((Integer) KeyEvent.BUTTON2_DOWN_MASK).toString()+CodeGeneratorJava.separator);
+	}
 }

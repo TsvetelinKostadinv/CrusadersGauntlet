@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.bluetoothIntegration.BluetoothInput"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.models.Direction"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.models.DirectionPointer"/>
+<fullyQualifiedTypeName name="javax.xml.bind.annotation.XmlEnumValue"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.models.Macro"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.models.exeptions.UnableToExecuteExeption"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.output.DisplayMethods"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.output.TerminalOutput"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.input.InputMethods"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.input.TerminalInput"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.fileManagement.FileCreatorDeletor"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.fileManagement.CreatorDeletor"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.io.FileWriter"/>
+<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+<fullyQualifiedTypeName name="java.awt.Robot"/>
+<fullyQualifiedTypeName name="java.util.Vector"/>
+<fullyQualifiedTypeName name="java.awt.PointerInfo"/>
+<fullyQualifiedTypeName name="java.awt.MouseInfo"/>
+<fullyQualifiedTypeName name="java.awt.Point"/>
+<fullyQualifiedTypeName name="org.eclipse.xtext.xbase.lib.Pair"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.mouseMovement.RobotMouseInteracter"/>
+<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.codeGeneration.ScriptFinder"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.codeGenerationCPP.CodeGeneratorCPP"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.codeGenerationJava.ScriptGeneratorJava"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.codeGenerationJava.ScriptWriterJava"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="com.crusaders.gauntlet.java.codeGenerationJava.ScriptFinderJava"/>
+</qualifiedTypeNameHistroy>

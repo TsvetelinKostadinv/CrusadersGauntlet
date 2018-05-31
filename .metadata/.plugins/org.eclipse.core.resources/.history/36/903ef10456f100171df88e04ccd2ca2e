@@ -1,0 +1,5 @@
+package com.crusaders.gauntlet.java.models.codeGeneration;
+
+public interface ScriptEditor {
+	public boolean editScript(int id, String contents);
+}

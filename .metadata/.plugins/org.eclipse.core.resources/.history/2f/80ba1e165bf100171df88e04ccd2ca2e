@@ -1,0 +1,22 @@
+package com.crusaders.gauntlet.java.models.codeGeneration;
+
+public class CommandCPP {
+	
+	
+	
+	public CommandCPP()
+	{
+		
+	}
+
+	public void extractCommands() 
+	{
+		
+		
+	}
+	
+	public void setCommand(String command)
+	{
+		
+	}
+}

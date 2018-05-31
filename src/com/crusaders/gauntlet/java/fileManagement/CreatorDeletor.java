@@ -26,6 +26,7 @@ public class CreatorDeletor  implements FileCreatorDeletor{
 				e.getMessage();
 			}
 		}
+		dir = null;
     }
 	
 	@Override
@@ -33,6 +34,7 @@ public class CreatorDeletor  implements FileCreatorDeletor{
 		System.out.println("Creating dir");
 		File dir = new File(directoryPath);
 		dir.mkdirs();
+		dir = null;
 	}
 	
 	

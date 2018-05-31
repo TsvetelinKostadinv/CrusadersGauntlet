@@ -1,0 +1,14 @@
+package com.crusaders.gauntlet.java.models;
+
+public class Direction {
+	
+	private int accX, accY;
+	
+	public Direction(int accX,int accY){
+		this.accX = accX;
+		this.accY = accY;
+	}
+	
+	
+	
+}

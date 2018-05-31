@@ -1,0 +1,118 @@
+package com.crusaders.gauntlet.java.GUI;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+
+import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+
+import com.crusaders.gauntlet.java.bluetooth.Receiver;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class MainMenu {
+
+	private JFrame frame;
+	
+
+
+	/**
+	 * Launch the application.
+	 */
+	public void run() {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
+	/**
+	 * Create the application.
+	 */
+	public MainMenu() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JButton btnInitializeConnection = new JButton("Initialize Connection");
+		btnInitializeConnection.setToolTipText("Click this button to initialize the connection");
+		btnInitializeConnection.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				Thread receivingThread;
+				
+				Runnable process = new Runnable() {
+					
+					@Override
+					public void run() {
+						new Receiver().startReceiving();
+					}
+				};
+				receivingThread = new Thread(process);
+				receivingThread.start();
+				btnInitializeConnection.setEnabled(false);
+			}
+		});
+		
+		JButton button = new JButton("Configure macros");
+		button.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) 
+			{
+				new FingerChoice().run();
+			}
+		});
+		button.setToolTipText("Click this button to initialize the connection");
+		
+		JButton btnNewButton = new JButton("Stop connection");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				//receivingThread.
+			}
+		});
+		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(btnInitializeConnection)
+							.addGap(18)
+							.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 155, GroupLayout.PREFERRED_SIZE))
+						.addComponent(button, GroupLayout.PREFERRED_SIZE, 147, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(100, Short.MAX_VALUE))
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addGap(36)
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(btnNewButton, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+						.addComponent(btnInitializeConnection, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(button, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE)
+					.addGap(46))
+		);
+		frame.getContentPane().setLayout(groupLayout);
+	}
+}
