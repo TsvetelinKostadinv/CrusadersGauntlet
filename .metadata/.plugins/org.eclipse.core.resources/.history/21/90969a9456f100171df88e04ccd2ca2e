@@ -1,8 +1,0 @@
-package com.crusaders.gauntlet.java.models.codeGeneration;
-
-import java.io.File;
-
-public interface ScriptEditor {
-	public boolean editScript(String contents);
-	public void changeTargetScript(File script);
-}

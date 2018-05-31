@@ -1,7 +1,0 @@
-package com.crusaders.gauntlet.java.codeGeneration;
-
-import java.io.File;
-
-public interface ScriptFinder {
-	public File findScript(Integer index);
-}

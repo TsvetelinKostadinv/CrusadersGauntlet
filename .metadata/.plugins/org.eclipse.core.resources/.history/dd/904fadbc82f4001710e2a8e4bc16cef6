@@ -1,5 +1,0 @@
-package com.crusaders.gauntlet.java.mouseMovement;
-
-public interface MouseMover {
-
-}
