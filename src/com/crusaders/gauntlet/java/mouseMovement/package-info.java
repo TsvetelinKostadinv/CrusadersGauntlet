@@ -1,7 +1,6 @@
 /**
+ * Contains the classes for moving the mouse
  * 
- */
-/**
  * @author Tsvetelin
  *
  */

@@ -1,9 +1,9 @@
-package com.crusaders.gauntlet.java.fileManagement.generation;
+package com.crusaders.gauntlet.java.fileManagement.creation;
 
 import java.io.File;
 import java.io.IOException;
 
-public class CreatorDeletor  implements IFileCreator
+public class Creator  implements IFileCreator
 {
 
 	@Override

@@ -1,7 +1,7 @@
 /**
  * 
- */
-/**
+ * This package contains utility classes for the project
+ * 
  * @author Tsvetelin
  *
  */
