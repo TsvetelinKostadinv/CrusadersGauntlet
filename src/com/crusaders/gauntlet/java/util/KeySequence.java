@@ -2,6 +2,7 @@ package com.crusaders.gauntlet.java.util;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class KeySequence
 {
@@ -84,15 +85,48 @@ public class KeySequence
         
     }
     
-    public List< Integer > getKeys () {
+    public List< Integer > getKeys () 
+    {
     
         return keys;
     }
 
     
-    public void setKeys ( List< Integer > keys ) {
-    
+    public void setKeys ( List< Integer > keys ) 
+    {
         this.keys = keys;
+    }
+    
+    /**
+     * This method parses the string into the KeySequence object. <br>
+     * There are, however, some special cases. 
+     * 
+     * 
+     * @param str
+     * @return KeySequence object formed by the supplied string or <code> null </code> if it does not contain the 
+     */
+    public static KeySequence parse(String str)
+    {
+        KeySequence parsedKS = null;
+        if(str.contains( Reference.separator ))
+        {
+            parsedKS = new KeySequence();
+            
+            String[] parts = str.split( Pattern.quote( Reference.separator )  );
+            for(int i = 0;i < parts.length;i++) 
+            {
+                try {
+                    Integer part = Integer.parseInt( parts[i].replaceAll( Pattern.quote( Reference.separator ) , "" ) );
+                    parsedKS.addKey( part );
+                }catch (NumberFormatException e) {
+                    System.out.println( "Caught a string we cannot parse!!" );
+                    return parsedKS;
+                }
+            }
+            
+            return parsedKS;
+        }
+        return parsedKS;
     }
     
 }
