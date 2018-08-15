@@ -314,8 +314,7 @@ public class RobotKeyPresser implements KeyPresser, KeySequencePresser {
     public void pressLeftMouseButton () { robo.keyPress( KeyEvent.BUTTON1_DOWN_MASK ); }
     @Override
     public void releaseLeftMouseButton () { robo.keyRelease( KeyEvent.BUTTON1_DOWN_MASK ); }
-
-
+    
     @Override
     public void pressRightMouseButton () { robo.keyPress( KeyEvent.BUTTON3_DOWN_MASK ); }
     @Override

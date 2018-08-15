@@ -25,9 +25,7 @@ public class KeySequence
 
     private void initDependencies () 
     {
-
         keys = new ArrayList<Integer>();
-        
     }
     
     @Override
@@ -51,7 +49,7 @@ public class KeySequence
         {
             for(int i=0;i<this.keys.size();i++)
             {
-                if(this.keys.get( i ) != ( (KeySequence) obj ).getKeys().get( i ))
+                if(this.keys.get( i ) != ( (KeySequence) obj ).getKeysAsList().get( i ))
                 {
                     return false;
                 }
@@ -61,21 +59,44 @@ public class KeySequence
        return false;
     }
     
+    /**
+     * 
+     * Adds the supplied key to the end of the sequence. <br>
+     * Note that there is no way to check if the value is of a real key or not so caution is needed with this method
+     * 
+     * @param key
+     * @return the same object for further manipulaton
+     */
     public KeySequence addKey(Integer key)
     {
         keys.add( key );
         return this;
     }
     
-    public void addKeys(Integer... keys)
+    /**
+     * Adds the supplied array of keys to the end of the sequence in the order they are in the array. <br>
+     * Note that there is no way to check if the value is of a real key or not so caution is needed with this method
+     * 
+     * @param keys
+     * @return the same object for further manipulaton
+     */
+    public KeySequence addKeys(Integer... keys)
     {
         for(Integer i : keys)
         {
             addKey( i );
         }
+        return this;
     }
     
-    public void addKeys ( List<Integer> keys ) 
+    /**
+     * Adds the supplied list of keys to the end of the sequence in the order they are in the list. <br>
+     * Note that there is no way to check if the value is of a real key or not so caution is needed with this method
+     * 
+     * @param keys
+     * @return the same object for further manipulaton
+     */
+    public KeySequence addKeys ( List<Integer> keys ) 
     {
         
         for(Integer i : keys)
@@ -83,15 +104,33 @@ public class KeySequence
             this.addKey( i );
         }
         
+        return this;
     }
     
-    public List< Integer > getKeys () 
+    /**
+     * 
+     * @return the keys in the sequence represented in a list
+     */
+    public List< Integer > getKeysAsList () 
     {
-    
         return keys;
     }
-
     
+    /**
+     * 
+     * @return the keys in the sequence represented in a list
+     */
+    public Integer[] getKeysAsArray () 
+    {
+        return (Integer []) keys.toArray();
+    }
+
+    /**
+     * 
+     * Sets the whole sequence to the supplied list. This clears all previous keys
+     * 
+     * @param keys
+     */
     public void setKeys ( List< Integer > keys ) 
     {
         this.keys = keys;
