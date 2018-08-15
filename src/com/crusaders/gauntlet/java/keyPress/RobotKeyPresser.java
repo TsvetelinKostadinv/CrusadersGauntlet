@@ -181,7 +181,7 @@ public class RobotKeyPresser implements KeyPresser, KeySequencePresser {
     @Override
     public void pressKeys ( KeySequence keys ) {
 
-        for(Integer i : keys.getKeys())
+        for(Integer i : keys.getKeysAsList())
         {
             pressKey(i);
         }
