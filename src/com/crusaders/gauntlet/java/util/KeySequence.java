@@ -99,11 +99,12 @@ public class KeySequence
     
     /**
      * This method parses the string into the KeySequence object. <br>
-     * There are, however, some special cases. 
-     * 
+     * There are, however, some special cases. <br>
+     * If it contains the separator char it will try to parse it. <br>
+     * If it encounters something it cannot parse it will return the sequence it generated to that moment.
      * 
      * @param str
-     * @return KeySequence object formed by the supplied string or <code> null </code> if it does not contain the 
+     * @return KeySequence object formed by the supplied string or <code> null </code> if it cannot be parsed at all
      */
     public static KeySequence parse(String str)
     {
