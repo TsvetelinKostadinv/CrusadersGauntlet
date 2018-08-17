@@ -1,4 +1,4 @@
-package com.crusaders.gauntlet.java.fileManagement.reading;
+package com.crusaders.gauntlet.java.util.fileManagement.reading;
 
 import java.io.File;
 import java.io.IOException;

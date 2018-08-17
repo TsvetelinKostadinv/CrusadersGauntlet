@@ -1,9 +1,9 @@
-package com.crusaders.gauntlet.java.util.macros.scriptManagement.generation;
+package com.crusaders.gauntlet.java.util.scriptManagement.generation;
 
 import java.io.IOException;
 
-import com.crusaders.gauntlet.java.fileManagement.creation.Creator;
-import com.crusaders.gauntlet.java.util.macros.scriptManagement.Script;
+import com.crusaders.gauntlet.java.util.fileManagement.creation.Creator;
+import com.crusaders.gauntlet.java.util.scriptManagement.Script;
 
 public class KeySequenceScriptGenerator implements ScriptGenerator{
     

@@ -5,4 +5,4 @@
  * @author Tsvetelin
  *
  */
-package com.crusaders.gauntlet.java.util.macros.scriptManagement.generation;
+package com.crusaders.gauntlet.java.util.scriptManagement.generation;

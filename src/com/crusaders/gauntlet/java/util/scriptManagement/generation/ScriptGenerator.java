@@ -1,8 +1,8 @@
-package com.crusaders.gauntlet.java.util.macros.scriptManagement.generation;
+package com.crusaders.gauntlet.java.util.scriptManagement.generation;
 
 import java.io.IOException;
 
-import com.crusaders.gauntlet.java.util.macros.scriptManagement.Script;
+import com.crusaders.gauntlet.java.util.scriptManagement.Script;
 
 public interface ScriptGenerator
 {
@@ -24,9 +24,9 @@ public interface ScriptGenerator
      * @return returns the Script object pointing to the script file created or
      * @throws IOException if an IO Exception occurred during the files creation
      */
-    public default Script generateNewScript() throws IOException
-    {
-        return generateNewScript(DEFAULT_DIRECTORY_PATH, DEFAULT_NAME);
+    public default Script generateNewScript() throws IOException 
+    { 
+        return generateNewScript(DEFAULT_DIRECTORY_PATH, DEFAULT_NAME); 
     }
     
     /**
@@ -36,8 +36,8 @@ public interface ScriptGenerator
      * @return returns the Script object pointing to the script file created or
      * @throws IOException if an IO Exception occurred during the files creation
      */
-    public default Script generateNewScript(String name) throws IOException
-    {
-        return generateNewScript(DEFAULT_DIRECTORY_PATH, name);
+    public default Script generateNewScript(String name) throws IOException 
+    { 
+        return generateNewScript(DEFAULT_DIRECTORY_PATH, name); 
     }
 }

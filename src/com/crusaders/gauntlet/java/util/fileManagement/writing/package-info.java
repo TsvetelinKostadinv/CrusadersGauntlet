@@ -5,4 +5,4 @@
  * @author Tsvetelin
  *
  */
-package com.crusaders.gauntlet.java.fileManagement.writing;
+package com.crusaders.gauntlet.java.util.fileManagement.writing;

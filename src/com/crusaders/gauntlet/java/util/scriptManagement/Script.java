@@ -1,4 +1,4 @@
-package com.crusaders.gauntlet.java.util.macros.scriptManagement;
+package com.crusaders.gauntlet.java.util.scriptManagement;
 
 import java.io.File;
 

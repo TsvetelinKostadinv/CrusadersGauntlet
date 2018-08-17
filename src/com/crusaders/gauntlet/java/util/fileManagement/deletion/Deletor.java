@@ -1,4 +1,4 @@
-package com.crusaders.gauntlet.java.fileManagement.deletion;
+package com.crusaders.gauntlet.java.util.fileManagement.deletion;
 
 import java.io.File;
 

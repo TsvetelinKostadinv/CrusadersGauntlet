@@ -6,4 +6,4 @@
  * @author Tsvetelin
  *
  */
-package com.crusaders.gauntlet.java.fileManagement.creation;
+package com.crusaders.gauntlet.java.util.fileManagement.creation;

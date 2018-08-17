@@ -1,4 +1,4 @@
-package com.crusaders.gauntlet.java.fileManagement.writing;
+package com.crusaders.gauntlet.java.util.fileManagement.writing;
 
 import java.io.File;
 import java.io.IOException;
