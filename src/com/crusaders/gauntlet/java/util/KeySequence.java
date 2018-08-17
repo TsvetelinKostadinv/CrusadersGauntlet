@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class KeySequence
+import com.crusaders.gauntlet.java.util.scriptManagement.reading.IParsableFromString;
+
+public class KeySequence implements IParsableFromString< KeySequence >
 {
     private List<Integer> keys;
     
@@ -36,7 +38,7 @@ public class KeySequence
         for(Integer i : keys)
         {
             sb.append( i.toString() );
-            sb.append( Reference.separator );
+            sb.append( Reference.CrusadersGauntletSpecialSymbols.DATA_SEPARATION_SYMBOL.getValue() );
         }
         
         return sb.toString();
@@ -145,18 +147,23 @@ public class KeySequence
      * @param str
      * @return KeySequence object formed by the supplied string or <code> null </code> if it cannot be parsed at all
      */
-    public static KeySequence parse(String str)
+    public KeySequence parse(String str)
     {
         KeySequence parsedKS = null;
-        if(str.contains( Reference.separator ))
+        if(str.contains( Reference.CrusadersGauntletSpecialSymbols.DATA_SEPARATION_SYMBOL.getValue() ))
         {
             parsedKS = new KeySequence();
             
-            String[] parts = str.split( Pattern.quote( Reference.separator )  );
+            String[] parts = str.split( Pattern.quote( Reference.CrusadersGauntletSpecialSymbols.DATA_SEPARATION_SYMBOL.getValue() )  );
             for(int i = 0;i < parts.length;i++) 
             {
                 try {
-                    Integer part = Integer.parseInt( parts[i].replaceAll( Pattern.quote( Reference.separator ) , "" ) );
+                    Integer part = Integer.parseInt( 
+                            parts[i].
+                            replaceAll( Pattern.quote( 
+                                        Reference.CrusadersGauntletSpecialSymbols.DATA_SEPARATION_SYMBOL.getValue()
+                                    ) , "" ) 
+                            );
                     parsedKS.addKey( part );
                 }catch (NumberFormatException e) {
                     System.out.println( "Caught a string we cannot parse!!" );
@@ -168,5 +175,7 @@ public class KeySequence
         }
         return parsedKS;
     }
+    
+    
     
 }

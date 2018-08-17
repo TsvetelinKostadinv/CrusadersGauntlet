@@ -6,7 +6,7 @@ import java.awt.event.KeyEvent;
 
 import com.crusaders.gauntlet.java.util.KeySequence;
 
-public class RobotKeyPresser implements KeyPresser, KeySequencePresser {
+public class RobotKeySequencePresser implements KeyPresser, KeySequencePresser {
 	
 	Robot robo;
 	
@@ -20,7 +20,7 @@ public class RobotKeyPresser implements KeyPresser, KeySequencePresser {
 	private static boolean isRightMousePressed = false; 
 	private static boolean isMiddleMousePressed = false;
 	
-	public RobotKeyPresser()
+	public RobotKeySequencePresser()
 	{
 		initDependencies();
 	}
