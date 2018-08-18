@@ -7,16 +7,21 @@ package com.crusaders.gauntlet.java.actions;
  * 
  * @author Tsvetelin
  *
- * @param <DataType> - the type of data which will be forwarded to the <code>ActionTaker</code>
+ * @param <DataType> - the type of data which will be forwarded to the <code>Taker</code> object
+ * @param <Taker> - the type which will execute the commands from the <code>DataType</code>
  */
-public abstract class ActionManager<DataType>
+public abstract class ActionManager <DataType, Taker>
 {
-    private ActionTaker taker;
+    private Taker taker;
 
-    public ActionManager ( ActionTaker taker )
+    public ActionManager ( Taker taker )
     {
-        super();
-        this.setTaker( taker );
+        if(taker.getClass().isAnnotationPresent( ActionTaker.class ))
+        {
+            this.setTaker( taker );
+        }else {
+            throw new IllegalArgumentException("Cannot assign a class which does not have @ActionTaker annotation");
+        }
     }
     
     /**
@@ -33,7 +38,7 @@ public abstract class ActionManager<DataType>
      * 
      * @return the taker assigned to this object
      */
-    public ActionTaker getTaker () 
+    public Taker getTaker () 
     {
         return taker;
     }
@@ -42,10 +47,9 @@ public abstract class ActionManager<DataType>
      * 
      * @param taker - the new <code>ActionTaker</code> object which will be assigned
      */
-    public void setTaker ( ActionTaker taker ) 
+    public void setTaker ( Taker taker ) 
     {
         this.taker = taker;
     }
     
-
 }

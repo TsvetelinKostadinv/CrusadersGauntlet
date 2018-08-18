@@ -7,7 +7,8 @@ import java.awt.event.KeyEvent;
 import com.crusaders.gauntlet.java.actions.ActionTaker;
 import com.crusaders.gauntlet.java.util.KeySequence;
 
-public class RobotKeySequencePresser extends ActionTaker implements KeySequencePresser {
+@ActionTaker
+public class RobotKeySequencePresser implements KeySequencePresser {
 	
 	Robot robo;
 	

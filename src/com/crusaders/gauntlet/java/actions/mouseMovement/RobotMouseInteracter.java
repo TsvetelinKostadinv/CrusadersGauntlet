@@ -8,8 +8,8 @@ import java.awt.Robot;
 import com.crusaders.gauntlet.java.actions.ActionTaker;
 import com.crusaders.gauntlet.java.util.Direction;
 
-
-public class RobotMouseInteracter extends ActionTaker implements MouseInteracter{
+@ActionTaker
+public class RobotMouseInteracter implements MouseInteracter{
 	
 	/* REMEMBER!!!!!
 	 * X++ is there

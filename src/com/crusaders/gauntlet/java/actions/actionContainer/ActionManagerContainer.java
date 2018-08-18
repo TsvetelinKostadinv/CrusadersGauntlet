@@ -10,7 +10,7 @@ import com.crusaders.gauntlet.java.actions.ActionManager;
 
 public class ActionManagerContainer
 {
-    private final List< ActionManager < ? > > managers;
+    private final List< ActionManager < ?, ?> > managers;
     
     private ActionManagerContainer instance = null;
     
@@ -25,7 +25,7 @@ public class ActionManagerContainer
     
     private ActionManagerContainer ()
     {
-        managers = new ArrayList< ActionManager < ? > >();
+        managers = new ArrayList< ActionManager < ?, ? > >();
     }
     
     /**
@@ -34,7 +34,7 @@ public class ActionManagerContainer
      * 
      * @param newManager - the <code>ActionManager</code> object which will be added
      */
-    public void addManager(ActionManager < ? > newManager)
+    public void addManager(ActionManager < ?, ? > newManager)
     {
         managers.add( newManager );
     }
@@ -45,7 +45,7 @@ public class ActionManagerContainer
      * 
      * @param toRemove - the <code>ActionManager</code> object which will be removed
      */
-    public void removeManager(ActionManager < ? > toRemove)
+    public void removeManager(ActionManager < ?, ? > toRemove)
     {
         do {
             managers.remove( toRemove );
@@ -56,9 +56,9 @@ public class ActionManagerContainer
      * 
      * @return a copy of the list for informative purposes
      */
-    public List<ActionManager < ? >> getManagers (  )
+    public List<ActionManager < ?, ? >> getManagers (  )
     {
-        return new ArrayList<ActionManager < ? >>( managers );
+        return new ArrayList<ActionManager < ?, ? >>( managers );
     }
     
 }
