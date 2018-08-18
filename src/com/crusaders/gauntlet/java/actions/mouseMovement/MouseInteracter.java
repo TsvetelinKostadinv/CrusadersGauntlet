@@ -1,4 +1,4 @@
-package com.crusaders.gauntlet.java.mouseMovement;
+package com.crusaders.gauntlet.java.actions.mouseMovement;
 
 import com.crusaders.gauntlet.java.util.Direction;
 

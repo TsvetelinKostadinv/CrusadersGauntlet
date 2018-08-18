@@ -3,7 +3,7 @@
 
 package com.crusaders.gauntlet.java.util.scriptManagement.execution;
 
-import com.crusaders.gauntlet.java.keyPress.KeyPresser;
+import com.crusaders.gauntlet.java.actions.keyPress.KeyPresser;
 import com.crusaders.gauntlet.java.util.scriptManagement.Script;
 
 /**

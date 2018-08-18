@@ -4,4 +4,4 @@
  * @author Tsvetelin
  *
  */
-package com.crusaders.gauntlet.java.mouseMovement;
+package com.crusaders.gauntlet.java.actions.mouseMovement;

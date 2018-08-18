@@ -1,4 +1,4 @@
-package com.crusaders.gauntlet.java.keyPress;
+package com.crusaders.gauntlet.java.actions.keyPress;
 
 import com.crusaders.gauntlet.java.util.KeySequence;
 

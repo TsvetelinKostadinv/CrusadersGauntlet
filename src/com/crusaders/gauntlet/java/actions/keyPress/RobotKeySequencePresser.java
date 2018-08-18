@@ -1,12 +1,13 @@
-package com.crusaders.gauntlet.java.keyPress;
+package com.crusaders.gauntlet.java.actions.keyPress;
 
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
+import com.crusaders.gauntlet.java.actions.ActionTaker;
 import com.crusaders.gauntlet.java.util.KeySequence;
 
-public class RobotKeySequencePresser implements KeySequencePresser {
+public class RobotKeySequencePresser extends ActionTaker implements KeySequencePresser {
 	
 	Robot robo;
 	

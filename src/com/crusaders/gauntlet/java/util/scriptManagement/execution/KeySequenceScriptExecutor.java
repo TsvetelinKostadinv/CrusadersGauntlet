@@ -3,7 +3,7 @@
 
 package com.crusaders.gauntlet.java.util.scriptManagement.execution;
 
-import com.crusaders.gauntlet.java.keyPress.KeySequencePresser;
+import com.crusaders.gauntlet.java.actions.keyPress.KeySequencePresser;
 import com.crusaders.gauntlet.java.util.KeySequence;
 import com.crusaders.gauntlet.java.util.scriptManagement.Script;
 import com.crusaders.gauntlet.java.util.scriptManagement.reading.KeySequenceScriptReader;

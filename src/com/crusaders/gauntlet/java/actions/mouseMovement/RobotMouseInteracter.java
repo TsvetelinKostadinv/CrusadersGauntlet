@@ -1,14 +1,15 @@
-package com.crusaders.gauntlet.java.mouseMovement;
+package com.crusaders.gauntlet.java.actions.mouseMovement;
 
 import java.awt.AWTException;
 import java.awt.MouseInfo;
 import java.awt.Point;
 import java.awt.Robot;
 
+import com.crusaders.gauntlet.java.actions.ActionTaker;
 import com.crusaders.gauntlet.java.util.Direction;
 
 
-public class RobotMouseInteracter implements MouseInteracter{
+public class RobotMouseInteracter extends ActionTaker implements MouseInteracter{
 	
 	/* REMEMBER!!!!!
 	 * X++ is there

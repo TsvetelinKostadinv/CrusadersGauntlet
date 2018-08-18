@@ -6,4 +6,4 @@
  * @author Tsvetelin
  *
  */
-package com.crusaders.gauntlet.java.keyPress;
+package com.crusaders.gauntlet.java.actions.keyPress;
