@@ -10,7 +10,23 @@ import com.crusaders.gauntlet.java.actions.ActionManager;
 
 public class ActionManagerContainer
 {
-    private final List< ActionManager < ? > > managers = new ArrayList< ActionManager < ? > >();
+    private final List< ActionManager < ? > > managers;
+    
+    private ActionManagerContainer instance = null;
+    
+    public ActionManagerContainer getInstance() 
+    { 
+        if(instance == null)
+        {
+            instance = new ActionManagerContainer();
+        }
+        return instance; 
+    }
+    
+    private ActionManagerContainer ()
+    {
+        managers = new ArrayList< ActionManager < ? > >();
+    }
     
     /**
      * 
@@ -38,7 +54,7 @@ public class ActionManagerContainer
     
     /**
      * 
-     * @return a copy of the list for informative purpouses
+     * @return a copy of the list for informative purposes
      */
     public List<ActionManager < ? >> getManagers (  )
     {
