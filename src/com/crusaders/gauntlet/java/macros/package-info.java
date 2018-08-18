@@ -5,4 +5,4 @@
  * @author Tsvetelin
  *
  */
-package com.crusaders.gauntlet.java.util.macros;
+package com.crusaders.gauntlet.java.macros;

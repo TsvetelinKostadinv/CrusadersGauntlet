@@ -1,6 +1,9 @@
 /**
  * 
- * This package contains the necessary classes for script processing
+ * This package contains the classes for script management such as:   <br>
+ * Generation ( ScriptGenerator ),   <br>
+ * Reading( ScriptReader ),      <br>
+ * Writing ( ScriptWriter ).
  * 
  * @author Tsvetelin
  *

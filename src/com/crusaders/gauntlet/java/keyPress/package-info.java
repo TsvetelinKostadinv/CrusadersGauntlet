@@ -1,7 +1,8 @@
+
 /**
  * 
- */
-/**
+ * This package contains the classes for pressing keys from the keyboard.
+ * 
  * @author Tsvetelin
  *
  */
