@@ -2,7 +2,7 @@ package com.crusaders.gauntlet.java.util;
 
 public enum Reference{
     
-    ; // this is here because Java requires the values in the enum to be the very first thing you define
+    ;  // this is here because Java requires the values in the enum to be the very first thing you define
     
     public static enum ScriptInfo
     {
