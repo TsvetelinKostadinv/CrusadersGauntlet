@@ -2,7 +2,7 @@ package com.crusaders.gauntlet.java.keyPress;
 
 import com.crusaders.gauntlet.java.util.KeySequence;
 
-public interface KeySequencePresser
+public interface KeySequencePresser extends KeyPresser
 {
     /**
      * Presses the keys annotated by the KeySequence object

@@ -1,6 +1,6 @@
 package com.crusaders.gauntlet.java.keyPress;
 
-interface KeyPresser 
+public interface KeyPresser 
 {
     void pressShift();
 	void releaseShift();

@@ -16,7 +16,6 @@ import com.crusaders.gauntlet.java.util.scriptManagement.Script;
 @FunctionalInterface
 public interface ScriptReader<T extends IParsableFromString< ? >>
 {
-    
     public static final IFileReader reader = new Reader();
     
     /**
