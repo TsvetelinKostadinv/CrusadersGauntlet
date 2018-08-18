@@ -13,7 +13,12 @@ package com.crusaders.gauntlet.java.actions;
 public abstract class ActionManager <DataType, Taker>
 {
     private Taker taker;
-
+    
+    /**
+     * 
+     * @param taker - the actual object which will do the work with the <code>DataType</code>
+     * @throws IllegalArgumentException - if the passed <code>Taker</code> does not have an <code>@ActionTaker</code> annotation
+     */
     public ActionManager ( Taker taker )
     {
         if(taker.getClass().isAnnotationPresent( ActionTaker.class ))
