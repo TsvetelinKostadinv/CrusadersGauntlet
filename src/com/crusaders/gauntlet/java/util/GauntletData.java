@@ -86,6 +86,10 @@ public class GauntletData implements IParsableFromString< GauntletData >
         {
             for(int i = 0;i<this.data.length;i++)
             {
+                if(i == accZIndex)
+                {
+                    this.data[i] = 0;
+                }
                 this.data[i] = newData[i];
             }
         }else {
