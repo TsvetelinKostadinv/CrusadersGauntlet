@@ -69,7 +69,7 @@ void loop(){
       pushed4 = true;
    }
 
-  BT.print(AcX + "|" + AcY + "|" + AcZ + "|" + pushed1 + "|" + pushed2 + "|" + pushed3 + "|" + pushed4 + "#");
+  BT.print(AcX + "|" + AcY + "|" + AcZ + "|" + pushed1 + "|" + pushed2 + "|" + pushed3 + "|" + pushed4 + "|#");
   
   
   delay(20);
