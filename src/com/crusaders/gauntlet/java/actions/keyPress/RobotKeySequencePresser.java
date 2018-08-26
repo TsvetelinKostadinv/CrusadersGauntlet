@@ -7,6 +7,13 @@ import java.awt.event.KeyEvent;
 import com.crusaders.gauntlet.java.actions.ActionTaker;
 import com.crusaders.gauntlet.java.util.KeySequence;
 
+/**
+ * 
+ * A simple class for pressing keys from the Keyboard
+ * 
+ * @author Tsvetelin
+ *
+ */
 @ActionTaker
 public class RobotKeySequencePresser implements KeySequencePresser {
 	

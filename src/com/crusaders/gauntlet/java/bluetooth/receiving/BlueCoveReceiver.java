@@ -22,6 +22,13 @@ import javax.microedition.io.StreamConnection;
 
 import com.crusaders.gauntlet.java.util.GauntletData;
 
+/**
+ * 
+ * A simple class implementation of the <code>Receiver</code> interface with BlueCove library
+ * 
+ * @author Tsvetelin
+ *
+ */
 public class BlueCoveReceiver implements Receiver< GauntletData >
 {
     public static final int bufferedErrorIterations = 3;

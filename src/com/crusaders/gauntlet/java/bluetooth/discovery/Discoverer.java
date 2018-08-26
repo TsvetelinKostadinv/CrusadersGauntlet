@@ -9,6 +9,13 @@ import java.util.List;
 
 import javax.bluetooth.RemoteDevice;
 
+/**
+ * 
+ * An interface defining the core functionality for discovering Bluetooth devices
+ * 
+ * @author Tsvetelin
+ *
+ */
 public interface Discoverer
 {
     /**

@@ -10,6 +10,14 @@ import java.io.PipedOutputStream;
 
 import javax.bluetooth.RemoteDevice;
 
+/**
+ * 
+ * An interface defining the methods for receiving from a Bluetooth device
+ * 
+ * @author Tsvetelin
+ *
+ * @param <WhatToReceive>
+ */
 public interface Receiver< WhatToReceive >
 {
     

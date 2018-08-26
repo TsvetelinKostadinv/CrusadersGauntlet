@@ -1,5 +1,15 @@
 package com.crusaders.gauntlet.java.actions.keyPress;
 
+/**
+ * 
+ * This is a depreciated interface which will be soon removed! <br>
+ * 
+ * This interface and <code>KeyPresser</code> will soon be merged into a generic interface and will be revamped
+ * 
+ * @author Tsvetelin
+ *
+ */
+@Deprecated
 public interface KeyPresser 
 {
     void pressShift();

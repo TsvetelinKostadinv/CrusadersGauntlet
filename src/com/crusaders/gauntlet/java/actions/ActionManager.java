@@ -5,6 +5,8 @@ package com.crusaders.gauntlet.java.actions;
 
 /**
  * 
+ * Acts as a pipeline and regulator between the container and the executor
+ * 
  * @author Tsvetelin
  *
  * @param <DataType> - the type of data which will be forwarded to the <code>Taker</code> object

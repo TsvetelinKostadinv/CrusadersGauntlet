@@ -9,7 +9,7 @@ import com.crusaders.gauntlet.java.actions.ActionTaker;
 import com.crusaders.gauntlet.java.util.Direction;
 
 @ActionTaker
-public class RobotMouseInteracter implements MouseInteracter{
+public class RobotMouseInteracter implements MouseInteracter< Direction >{
 	
 	/* REMEMBER!!!!!
 	 * X++ is there

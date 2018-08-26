@@ -8,6 +8,15 @@ import java.util.List;
 
 import com.crusaders.gauntlet.java.actions.ActionManager;
 
+/**
+ * 
+ * This container class holds <code>ActionManagers</code>.  <br>
+ * This class is singleton because there needs to be one and only one instance of this object at any given time <br>
+ * 
+ * 
+ * @author Tsvetelin
+ *
+ */
 public class ActionManagerContainer
 {
     private final List< ActionManager < ?, ?> > managers;
@@ -59,6 +68,28 @@ public class ActionManagerContainer
     public List<ActionManager < ?, ? >> getManagers (  )
     {
         return new ArrayList<ActionManager < ?, ? >>( managers );
+    }
+    
+    /**
+     * 
+     * Updates all the managers with the provided data object   <br>
+     * which will be checked for compatibility with every <code>Action manager</code>   <br>
+     * before casting the data to the <code>DataType</code> of the <code>ActionManager</code>.
+     * 
+     * 
+     * @param data - the object which will be forwarded
+     */
+    @SuppressWarnings ( "all" )
+    public void updateManagers( Object data )
+    {
+        for ( ActionManager manager : managers )
+        {
+            Class< ? > dataType = manager.getDataType();
+            if( dataType.isInstance( data ) )
+            {
+                manager.forwardDataToActionTaker( dataType.cast( data ) );
+            }
+        }
     }
     
 }

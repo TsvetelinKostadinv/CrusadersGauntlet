@@ -17,7 +17,13 @@ import javax.bluetooth.LocalDevice;
 import javax.bluetooth.RemoteDevice;
 import javax.bluetooth.ServiceRecord;
 
-
+/**
+ * 
+ * An implementation of the <code>Discoverer</code> interface using the BlueCove library
+ * 
+ * @author Tsvetelin
+ *
+ */
 public class BlueCoveDiscoverer implements Discoverer
 {
     
