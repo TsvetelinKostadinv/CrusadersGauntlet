@@ -5,6 +5,7 @@
 
 /.gradle/
 /gradle/
+/build/
 
 bin/
 tmp/
