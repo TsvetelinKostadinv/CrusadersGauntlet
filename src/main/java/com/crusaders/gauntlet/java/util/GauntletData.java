@@ -22,10 +22,10 @@ public class GauntletData implements IParsableFromString< GauntletData >
     public final int btn3PushedStateIndex = 5;
     public final int btn4PushedStateIndex = 6;
     
-    public int[] data = new int[7];
+    public short[] data = new short[7];
     
     
-    public GauntletData (int[] data)
+    public GauntletData (short[] data)
     {
         setData( data );
     }
@@ -33,7 +33,7 @@ public class GauntletData implements IParsableFromString< GauntletData >
     
     public GauntletData ()
     {
-        setData( new int[7] );
+        setData( new short[7] );
     }
     
     
@@ -41,29 +41,29 @@ public class GauntletData implements IParsableFromString< GauntletData >
     public GauntletData parse ( String str ) {
         String[] parts = str.split( Reference.CrusadersGauntletSpecialSymbols.DATA_SEPARATION_SYMBOL.getValue() );
         
-        int[] data = new int[this.data.length];
+        short[] data = new short[this.data.length];
         
         for(int i=0;i<parts.length;i++)
         {
             switch ( i )
                 {
                     case accXIndex :
-                        data[accXIndex] = Integer.parseInt( parts[accXIndex] );
+                        data[accXIndex] = Short.parseShort( parts[accXIndex] );
                         break;
                     case accYIndex :
-                        data[accYIndex] = Integer.parseInt( parts[accYIndex] );
+                        data[accYIndex] = Short.parseShort( parts[accYIndex] );
                         break;
                     case btn1PushedStateIndex :
-                        data[btn1PushedStateIndex] = Integer.parseInt( parts[btn1PushedStateIndex] );
+                        data[btn1PushedStateIndex] = Short.parseShort( parts[btn1PushedStateIndex] );
                         break;
                     case btn2PushedStateIndex :
-                        data[btn2PushedStateIndex] = Integer.parseInt( parts[btn2PushedStateIndex] );
+                        data[btn2PushedStateIndex] = Short.parseShort( parts[btn2PushedStateIndex] );
                         break;
                     case btn3PushedStateIndex :
-                        data[btn3PushedStateIndex] = Integer.parseInt( parts[btn3PushedStateIndex] );
+                        data[btn3PushedStateIndex] = Short.parseShort( parts[btn3PushedStateIndex] );
                         break;
                     case btn4PushedStateIndex :
-                        data[btn4PushedStateIndex] = Integer.parseInt( parts[btn4PushedStateIndex] );
+                        data[btn4PushedStateIndex] = Short.parseShort( parts[btn4PushedStateIndex] );
                         break;
                     default : continue;
                 }
@@ -80,7 +80,7 @@ public class GauntletData implements IParsableFromString< GauntletData >
      * 
      * @param newData - the new array which will be assigned
      */
-    public void setData(int[] newData)
+    public void setData(short[] newData)
     {
         if(newData!=null && newData.length == this.data.length)
         {
