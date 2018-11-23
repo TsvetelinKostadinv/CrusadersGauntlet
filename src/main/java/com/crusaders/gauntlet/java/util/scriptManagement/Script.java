@@ -8,17 +8,7 @@ public class Script
     
     public Script(File fileScript)
     {
-        if(fileScript == null)
-        {
-            throw new IllegalArgumentException("The file assigned should not be null");
-        }else if(!fileScript.exists())
-        {
-            throw new IllegalArgumentException("The file assigned should exist");
-        }else if(!fileScript.isDirectory())
-        {
-            throw new IllegalArgumentException("The file assigned should be a file not a directory");
-        }
-        this.fileScript = fileScript;
+        setScript( fileScript );
     }
     
     public File getScript()
@@ -34,7 +24,7 @@ public class Script
         }else if(!fileScript.exists())
         {
             throw new IllegalArgumentException("The file assigned should exist");
-        }else if(!fileScript.isDirectory())
+        }else if(fileScript.isDirectory())
         {
             throw new IllegalArgumentException("The file assigned should be a file not a directory");
         }
