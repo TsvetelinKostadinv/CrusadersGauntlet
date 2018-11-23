@@ -28,5 +28,18 @@ public class Direction {
 		this.accY = accY;
 	}
 	
+	@Override
+	public String toString ()
+	{
+	    return "Pointing x:" + accX + ", pointing y:" + accY;
+	}
+	
+	@Override
+	public boolean equals ( Object obj )
+	{
+	    return obj instanceof Direction
+	            && ( ( Direction ) obj).accX == this.accX
+	            && ( ( Direction ) obj).accY == this.accY;
+	}
 	
 }

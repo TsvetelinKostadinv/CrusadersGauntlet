@@ -6,9 +6,9 @@
 package com.crusaders.gauntlet.java.bluetooth.receiving;
 
 import java.io.IOException;
-import java.io.PipedOutputStream;
-
 import javax.bluetooth.RemoteDevice;
+
+import com.crusaders.gauntlet.java.util.communication.Channel;
 
 /**
  * 
@@ -24,12 +24,12 @@ public interface Receiver< WhatToReceive >
     /**
      * 
      * Receives data from the <code>RemoteDevice</code>,                <br>
-     *  and sends it over to the <code>PipedOutputStream</code>         <br>
+     *  and sends it over to the <code>Channel</code>         <br>
      * 
      * @param sender - the <code>RemoteDevice</code> which will be expected to send data
      * @return a parsed version of the data received
      */
-    public void ContinualReceive( RemoteDevice sender ) throws IOException;
+    public void continualReceive(  ) throws IOException;
     
     /**
      * Receives only once from the sender
@@ -44,7 +44,7 @@ public interface Receiver< WhatToReceive >
      * 
      * @return the pipeline through which the data will be sent
      */
-    public PipedOutputStream getOutputChannel();
+    public Channel< WhatToReceive > getOutputChannel();
     
     
 }

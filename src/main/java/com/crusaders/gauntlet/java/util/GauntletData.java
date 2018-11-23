@@ -4,6 +4,8 @@
  */
 package com.crusaders.gauntlet.java.util;
 
+import java.util.Arrays;
+
 import com.crusaders.gauntlet.java.util.Reference.CrusadersGauntletSpecialSymbols;
 import com.crusaders.gauntlet.java.util.scriptManagement.reading.IParsableFromString;
 
@@ -37,43 +39,6 @@ public class GauntletData implements IParsableFromString< GauntletData >
     }
     
     
-    @Override
-    public GauntletData parse ( String str ) {
-        String[] parts = str.split( Reference.CrusadersGauntletSpecialSymbols.DATA_SEPARATION_SYMBOL.getValue() );
-        
-        short[] data = new short[this.data.length];
-        
-        for(int i=0;i<parts.length;i++)
-        {
-            switch ( i )
-                {
-                    case accXIndex :
-                        data[accXIndex] = Short.parseShort( parts[accXIndex] );
-                        break;
-                    case accYIndex :
-                        data[accYIndex] = Short.parseShort( parts[accYIndex] );
-                        break;
-                    case btn1PushedStateIndex :
-                        data[btn1PushedStateIndex] = Short.parseShort( parts[btn1PushedStateIndex] );
-                        break;
-                    case btn2PushedStateIndex :
-                        data[btn2PushedStateIndex] = Short.parseShort( parts[btn2PushedStateIndex] );
-                        break;
-                    case btn3PushedStateIndex :
-                        data[btn3PushedStateIndex] = Short.parseShort( parts[btn3PushedStateIndex] );
-                        break;
-                    case btn4PushedStateIndex :
-                        data[btn4PushedStateIndex] = Short.parseShort( parts[btn4PushedStateIndex] );
-                        break;
-                    default : continue;
-                }
-        }
-        
-        
-        return new GauntletData( data );
-        
-    }
-    
     /**
      * 
      * Sets the internal array to the new one provided
@@ -99,6 +64,44 @@ public class GauntletData implements IParsableFromString< GauntletData >
     
     
     @Override
+    public GauntletData parse ( String str ) {
+        String[] parts = str.split( "\\" + Reference.CrusadersGauntletSpecialSymbols.DATA_SEPARATION_SYMBOL.getValue() );
+        short[] data = new short[this.data.length];
+        
+        for(int i=0;i<parts.length;i++)
+        {
+            switch ( i )
+                {
+                    case accXIndex :
+                        data[accXIndex] = Short.parseShort( parts[accXIndex] );
+                        break;
+                    case accYIndex :
+                        data[accYIndex] = Short.parseShort( parts[accYIndex] );
+                        break;
+                    case btn1PushedStateIndex :
+                        data[btn1PushedStateIndex] = Short.parseShort( parts[btn1PushedStateIndex] );
+                        break;
+                    case btn2PushedStateIndex :
+                        data[btn2PushedStateIndex] = Short.parseShort( parts[btn2PushedStateIndex] );
+                        break;
+                    case btn3PushedStateIndex :
+                        data[btn3PushedStateIndex] = Short.parseShort( parts[btn3PushedStateIndex] );
+                        break;
+                    case btn4PushedStateIndex :
+                        String specialCase = parts[btn4PushedStateIndex].charAt( 0 ) + "";
+                        data[btn4PushedStateIndex] = Short.parseShort( specialCase );
+                        break;
+                    default : continue;
+                }
+        }
+        
+        
+        return new GauntletData( data );
+        
+    }
+
+
+    @Override
     public String toString () 
     {
         StringBuilder sb = new StringBuilder();
@@ -108,7 +111,7 @@ public class GauntletData implements IParsableFromString< GauntletData >
             sb.append( CrusadersGauntletSpecialSymbols.DATA_SEPARATION_SYMBOL.getValue() );
         }
         sb.append( CrusadersGauntletSpecialSymbols.DATA_TERMINATION_SYMBOL.getValue() );
-        return super.toString();
+        return sb.toString();
     }
     
     @Override
@@ -129,7 +132,7 @@ public class GauntletData implements IParsableFromString< GauntletData >
      * 
      * @see Direction
      */
-    public Direction transformIntoDirection()
+    public Direction castToDirection()
     {
         return new Direction( data[accXIndex] , data[accYIndex] );
     }
