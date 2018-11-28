@@ -10,7 +10,7 @@ apply plugin: 'eclipse'
 
 
 archivesBaseName = 'Crusaders_Gauntlet'
-version = '2.0.0.3'
+version = '2.0.0.638'
 
 
 sourceSets 
@@ -26,6 +26,17 @@ buildscript {
     }
     dependencies {
         classpath 'org.junit.platform:junit-platform-gradle-plugin:1.1.0'
+    }
+}
+
+jar {
+    from {
+        (configurations.runtime).collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }    
+    manifest {
+        attributes 'Main-Class': 'com.crusaders.gauntlet.java.Main'
     }
 }
 

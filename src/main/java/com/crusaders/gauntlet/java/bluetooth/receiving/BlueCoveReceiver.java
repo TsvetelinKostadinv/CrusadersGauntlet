@@ -17,8 +17,6 @@ import javax.bluetooth.ServiceRecord;
 import javax.bluetooth.UUID;
 import javax.microedition.io.Connector;
 import javax.microedition.io.StreamConnection;
-import javax.microedition.io.StreamConnectionNotifier;
-
 import com.crusaders.gauntlet.java.util.GauntletData;
 import com.crusaders.gauntlet.java.util.communication.Channel;
 
@@ -59,10 +57,9 @@ public class BlueCoveReceiver implements Receiver< GauntletData >
         try
         {
             assignURL( sender );
-        } catch ( BluetoothStateException e )
-        {
-            System.out.println( "Exceeding the max number of devices" );
-            e.printStackTrace();
+        } catch (BluetoothStateException e2) {
+            System.out.println( "Devices paired but did not connect!" );
+            throw new IllegalStateException( "The gauntlet must be powered on" );
         }
 
         initDependencies();
@@ -270,9 +267,9 @@ public class BlueCoveReceiver implements Receiver< GauntletData >
                 assignURL( sender );
             }
 
-        } catch ( BluetoothStateException e )
-        {
-            e.printStackTrace();
+        }catch (BluetoothStateException e2) {
+            System.out.println( "Devices paired but did not connect!" );
+            throw new IllegalStateException( "The gauntlet must be powered on" );
         }
 
         initStreams();

@@ -4,8 +4,6 @@
  */
 package com.crusaders.gauntlet.java.util;
 
-import java.util.Arrays;
-
 import com.crusaders.gauntlet.java.util.Reference.CrusadersGauntletSpecialSymbols;
 import com.crusaders.gauntlet.java.util.scriptManagement.reading.IParsableFromString;
 
@@ -15,16 +13,16 @@ import com.crusaders.gauntlet.java.util.scriptManagement.reading.IParsableFromSt
  */
 public class GauntletData implements IParsableFromString< GauntletData >
 {
-    public final int accXIndex = 1;
-    public final int accYIndex = 0;
-    public final int accZIndex = 2;
+    public static final int accXIndex = 1;
+    public static final int accYIndex = 0;
+    public static final int accZIndex = 2;
     
-    public final int btn1PushedStateIndex = 3;
-    public final int btn2PushedStateIndex = 4;
-    public final int btn3PushedStateIndex = 5;
-    public final int btn4PushedStateIndex = 6;
+    public static final int btn1PushedStateIndex = 3;
+    public static final int btn2PushedStateIndex = 4;
+    public static final int btn3PushedStateIndex = 5;
+    public static final int btn4PushedStateIndex = 6;
     
-    public short[] data = new short[7];
+    private short[] data = new short[7];
     
     
     public GauntletData (short[] data)
@@ -39,6 +37,14 @@ public class GauntletData implements IParsableFromString< GauntletData >
     }
     
     
+    
+    public short [] getData ()
+    {
+    
+        return data;
+    }
+
+
     /**
      * 
      * Sets the internal array to the new one provided

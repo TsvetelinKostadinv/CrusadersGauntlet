@@ -21,9 +21,9 @@ public class ActionManagerContainer
 {
     private final List< ActionManager < ?, ?> > managers;
     
-    private ActionManagerContainer instance = null;
+    private static ActionManagerContainer instance = null;
     
-    public ActionManagerContainer getInstance() 
+    public static ActionManagerContainer getInstance() 
     { 
         if(instance == null)
         {
